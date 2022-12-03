@@ -24,11 +24,14 @@ export const MainContainer = ({ children }) => {
     <div className={` flex font-mulish`}>
       <Sidebar />
       <div className={` md:relative block lg:left-[230px] left-[0px] home`}>
-        <div
-          className={` animate-in slide-in-from-left-48 duration-300 lg:px-2 px-4`}
-        >
+        <div className={`  lg:px-2 px-4`}>
           <Navbar />
-          <div onClick={() => setShowSidebar(false)}>{children}</div>
+          <div
+            className="animate-in slide-in-from-left-48 duration-300"
+            onClick={() => setShowSidebar(false)}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>
