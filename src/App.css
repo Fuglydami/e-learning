@@ -1,38 +1,294 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Quicksand&display=swap');
+  
+
+body {
+ background-color:#FBFBFB;
+    font-family: 'Mulish', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+.white{
+    color: white;
+}
+
+.pageHeight{
+  min-height: calc(100vh - 160px);
+}
+.animated-progress {
+ margin-top:1px;
+  height: 8px;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+}
+.animated-progress span {
+  height: 100%;
+  display: block;
+  width: 0;
+  color: #FAF8F7;
+  line-height: 30px;
+  position: absolute;
+  text-align: end;
+  padding-right: 5px;
+}
+
+.modalBackdrop{
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.nav-sub-link {
+  visibility: visible;
+
+ 
+}
+@media only screen and (max-width: 992px) {
+  .sidebarBackdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7) !important;
+
+  
+  }
+ }
+
+.carousel {
+  height: 100vh;
+}
+
+.activeStyle{
+  color: #C85100;
+  background-color: #ffff;
+}
+
+.navLi{
+  list-style: circle inside url("./asssets/icons/Dot.png");
+}
+
+.navStyle{
+  background-color: #ffffff;
+  color: #C85100;
+  border-right: 4px solid #C85100;
+  display: flex;
+}
+
+
+.carousel_card {
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.carousel_card-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px 30px;
+  align-items: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.home{
+  width: calc(100vw - 265px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.coursePinkColor{
+  background-color: #DA7467;
+}
+
+.courseGreenColor{
+  background-color: #5EA3B4;
+}
+
+.courseColor1{
+  background-color: #DBF5FF
+  ;
+}
+.courseColor2{
+  background-color: #FEF3E7
+  ;
+}
+.courseColor3{
+  background-color: #F4E8FF
+  ;
+}
+.courseColor4{
+  background-color: #C2FEE1;
+}
+.courseColorBorder1{
+  border-left: 2px solid #008FFF
+  ;
+}
+.courseColorBorder2{
+   border-left: 2px solid #C85100
+  ;
+}
+.courseColorBorder3{
+   border-left: 2px solid #D9ACFD
+  ;
+}
+.courseColorBorder4{
+   border-left: 2px solid #3BC481;
+}
+
+@media only screen and (max-width: 992px) {
+ .home {
+    width:100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.carousel_pagination {
+  position: absolute;
+  bottom: 36%;
+  left: 5rem;
+  transform: translate(-50%, 0);
+}
+
+.pagination_dot {
+  height: 7px;
+  width: 7px;
+  background-color: #ffdb8d74;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.pagination_dot:hover {
+  transform: scale(1.2);
+}
+
+.pagination_dot-active {
+  background-color: #FFDB8D;
+  padding: 0 20px;
+  border-radius: 12px;
+}
+
+*::-webkit-scrollbar {
+  width: 0.6em;
+  border-radius: '8px'
+}
+
+body::-webkit-scrollbar-track {
+  background-color:  #f5f6fa;
+  border-radius: 8px
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c8d5dd;
+  border-radius: 8px;
+}
+
+.col {
+  margin-top: 0px;
+}
+
+div::-webkit-scrollbar {
+  width: 0.4em;
+  border-radius: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  background-color: #f5f6fa;
+  border-radius: 8px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #c8d5dd;
+  border-radius: 8px;
+}
+
+.containercheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 6px;
+  
+  cursor: pointer;
+  font-size: 16px;
+  font-weight:500;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.containercheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+
+.containercheck:hover input ~ .checkmark {
+  background-color: #ccc;
+  
+}
+
+
+.containercheck input:checked ~ .checkmark {
+  background-color: white;
+  border: 1px solid #C85100;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.containercheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.containercheck .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #C85100;
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #C85100;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #C85100;
 }
