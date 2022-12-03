@@ -25,11 +25,10 @@ export const MainContainer = ({ children }) => {
       <Sidebar />
       <div className={` md:relative block lg:left-[230px] left-[0px] home`}>
         <div
-          onClick={() => setShowSidebar(false)}
-          className={` animate-in slide-in-from-left-48 duration-300  px-2`}
+          className={` animate-in slide-in-from-left-48 duration-300 lg:px-2 px-4`}
         >
           <Navbar />
-          {children}
+          <div onClick={() => setShowSidebar(false)}>{children}</div>
         </div>
       </div>
     </div>
@@ -62,7 +61,7 @@ export const Title = ({ title, show, children, childrenClass }) => {
               placeholder="Search a Course"
             />
 
-            <CiSearch className="relative bottom-7 lg:left-64 left-80" />
+            <CiSearch className="relative bottom-7 md:left-64  left-80" />
           </>
         ) : (
           <div className={childrenClass}>{children}</div>

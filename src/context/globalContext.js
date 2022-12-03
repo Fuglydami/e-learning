@@ -28,7 +28,6 @@ const AppProvider = ({ children }) => {
         closeModal,
         openTab,
         setOpenTab,
-
         showSidebar,
         setShowSidebar,
         show,
