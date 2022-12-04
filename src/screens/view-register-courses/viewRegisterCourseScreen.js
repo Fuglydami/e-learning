@@ -1,12 +1,14 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import { Title } from "../../misc/component-wrapper";
 import { customStyles } from "../../misc/data";
 import CustomButton from "../../shared/custom-button";
 import { accumulate } from "../../shared/helper-functions/save-data";
 
 const ViewRegisterCourseScreen = () => {
+  let navigate = useNavigate();
   const data = [
     {
       id: 1,
@@ -157,6 +159,7 @@ const ViewRegisterCourseScreen = () => {
         <CustomButton
           containerStyle={"mt-4"}
           title={"Print course form"}
+          onClick={() => navigate("/view-registered-courses/print-course-form")}
           buttonStyle={"lg:w-1/3 w-full font-[600]  bg-base_range white"}
         />
       </div>

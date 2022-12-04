@@ -1,6 +1,6 @@
 import moment from "moment";
 import React, { useMemo } from "react";
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
@@ -118,6 +118,18 @@ const EventCalender = () => {
     };
   };
 
+  const { views, ...otherProps } = useMemo(
+    () => ({
+      views: {
+        month: false,
+        week: true,
+        day: false,
+      },
+      // ... other props
+    }),
+    []
+  );
+
   return (
     <div className="mt-6">
       <Calendar
@@ -128,7 +140,7 @@ const EventCalender = () => {
         defaultDate={defaultDate}
         localizer={localizer}
         popup={false}
-        defaultView="week"
+        defaultView={Views.WEEK}
         resizable
         startAccessor="start"
         endAccessor="end"

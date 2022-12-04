@@ -9,6 +9,7 @@ import DisputePayment from "./screens/dispute-payment-list/dispute-payment";
 
 import LoginScreen from "./screens/login/login";
 import ViewPaymentReceipt from "./screens/payment-reciept/component/view-payment-receipt";
+import PrintAllCourse from "./screens/print-all-course/print-all-course";
 import CourseForm from "./screens/print-course-form/print-course-form";
 import RegisterCourses from "./screens/register-courses/register-courses";
 import CheckResult from "./screens/results/check-result";
@@ -35,6 +36,10 @@ function App() {
         <Route path="/view-payment-receipt" element={<ViewPaymentReceipt />} />
         <Route path="/my-learning/class/:courseId" element={<Class />} />
         <Route
+          path="/view-registered-courses/print-course-form"
+          element={<CourseForm />}
+        />
+        <Route
           path="/view-registered-courses"
           element={<ViewRegisterCourse />}
         />
@@ -47,7 +52,7 @@ function App() {
         <Route path="check-result/result" element={<MyResult />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/save-notes" element={<SaveNotes />} />
-        <Route path="/print-course-form" element={<CourseForm />} />
+        <Route path="/print-all-course" element={<PrintAllCourse />} />
       </Routes>
     </>
   );

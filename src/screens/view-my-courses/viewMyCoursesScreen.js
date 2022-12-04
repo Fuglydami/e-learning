@@ -63,7 +63,7 @@ const ViewMyCoursesScreen = () => {
     <div className="flex lg:ml-10 ml-0 gap lg:flex-nowrap flex-wrap lg:gap-6 gap-0">
       <div className="flex flex-col mb-6 w-full">
         <SectionContainer>
-          <div className="flex justify-between items-center font-Quicksand my-6">
+          <div className="flex justify-between items-center font-Quicksand px-2 lg:px-0 my-6">
             <h3 className="font-[700] lg:text-[20px] text-md">
               Ongoing Courses
             </h3>

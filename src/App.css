@@ -292,3 +292,17 @@ div::-webkit-scrollbar-thumb {
   @apply: bg-green-400;
   background-color: #C85100;
 }
+
+.rbc-timeslot-group {
+  /* width: 50px;
+  height: 50px;
+  background-color: red; */
+}
+
+.rbc-timeslot-group.second {
+  background-color: green;
+}
+
+/* .rbc-timeslot-group.third {
+  background-color: blue;
+} */

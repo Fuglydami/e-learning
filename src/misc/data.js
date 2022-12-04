@@ -115,7 +115,7 @@ export const navItem = [
       },
       {
         subtab: "Print course form",
-        link: "/print-course-form",
+        link: "/print-all-course",
         tabstyle: "pb-4",
       },
     ],
