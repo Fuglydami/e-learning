@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BiErrorAlt, BiTimeFive } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
@@ -6,7 +6,6 @@ import Notification from "../asssets/icons/notification.svg";
 import Avatar from "../asssets/images/avatar.svg";
 import Wave from "../asssets/images/wave.svg";
 import { useGlobalContext } from "../context/globalContext";
-import { tabContext } from "../context/tabContext";
 
 const notifStyle = {
   height: "7px",
@@ -18,11 +17,10 @@ const notifStyle = {
   top: "43.65px",
 };
 const Navbar = () => {
-  const context = useContext(tabContext);
   const { setShowSidebar, showSidebar } = useGlobalContext();
   const [show, setShow] = React.useState(false);
   return (
-    <div className="lg:ml-10 ml-4 mt-8  flex items-center">
+    <div className="lg:ml-10 ml-0 mt-8  flex items-center">
       <div className="flex w-full justify-between">
         <div className="flex flex-col lg:space-y-1 space-y-0 mb-7">
           <div className="flex justify-center items-center space-x-2">
@@ -37,12 +35,12 @@ const Navbar = () => {
         </div>
         <div
           onClick={() => setShowSidebar(!showSidebar)}
-          className="block lg:hidden"
+          className=" lg:hidden flex"
         >
           {showSidebar ? (
-            <MdOutlineClose className="mr-4 text-[35px] text-lightGrey" />
+            <MdOutlineClose className=" text-[35px] text-lightGrey" />
           ) : (
-            <GiHamburgerMenu className="mr-4 text-[35px] text-lightGrey" />
+            <GiHamburgerMenu className=" text-[35px] text-lightGrey" />
           )}
         </div>
         <div className="lg:flex h-10 items-center space-x-6 hidden ">

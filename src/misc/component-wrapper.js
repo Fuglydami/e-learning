@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar/sidebar";
@@ -19,7 +19,9 @@ export const Container = ({ children }) => {
 };
 export const MainContainer = ({ children }) => {
   const { setShowSidebar } = useGlobalContext();
-
+  useEffect(() => {
+    setShowSidebar(false);
+  }, []);
   return (
     <div className={` flex font-mulish`}>
       <Sidebar />
@@ -51,7 +53,7 @@ export const SectionContainer = ({ children }) => {
 export const Title = ({ title, show, children, childrenClass }) => {
   return (
     <section className="flex lg:flex-row flex-col md:pt-0 pt-4  w-full justify-between">
-      <div className="flex  ">
+      <div className="flex px-2 lg:px-0 ">
         <p className="font-Quicksand font-bold md:pb-0 pb-2 text-xl">{title}</p>
       </div>
       <div>

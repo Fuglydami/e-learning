@@ -64,7 +64,7 @@ const Biodata = () => {
             return (
               <div
                 key={item.title}
-                className="grid font-[600] grid-cols-4 md:gap-0  pb-8"
+                className="grid font-[600] grid-cols-4 md:gap-0  md:pb-8 pb-5"
               >
                 <p className="text-lightGrey ">{item.title}</p>
                 <p className="col-span-3 md:ml-0 ml-12">{item.desc}</p>
@@ -77,7 +77,7 @@ const Biodata = () => {
             return (
               <div
                 key={item.title}
-                className="grid font-[600] grid-cols-4 pb-8"
+                className="grid font-[600] grid-cols-4 md:pb-8 pb-5"
               >
                 <p className="text-lightGrey">{item.title}</p>
                 <p className="col-span-3 md:ml-0 ml-12">{item.desc}</p>

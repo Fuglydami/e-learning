@@ -106,7 +106,7 @@ const CourseForm = () => {
       <Container>
         <Header />
         <StudentDetails />
-        <section className="grid lg:grid-cols-2 grid-cols-1 lg:gap-4 gap-0 w-full   my-2">
+        <section className="grid lg:grid-cols-2 grid-cols-1 lg:gap-4 gap-0 w-full my-2">
           <article>
             <div className="font-[700] px-7 py-5 mb-8 bg-base_range white">
               Harmattan Semester Courses
