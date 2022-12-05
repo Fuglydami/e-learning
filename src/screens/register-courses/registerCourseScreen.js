@@ -39,7 +39,7 @@ const RegisterCourseScreen = () => {
           paragraph={
             "Congratulations, you have completed your course registration."
           }
-          onClick={() => navigate("/print-course-form")}
+          onClick={() => navigate("/print-all-course")}
           buttonText={"Print course form"}
         />
       </ModalWrapper>

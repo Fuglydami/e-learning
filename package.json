@@ -17,6 +17,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-input-emoji": "^4.3.0",
+    "react-material-ui-calendar": "^0.2.3",
     "react-otp-input": "^2.4.0",
     "react-player": "^2.11.0",
     "react-responsive-datepicker": "^1.0.6",

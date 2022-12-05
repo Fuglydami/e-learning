@@ -122,31 +122,7 @@ export const navItem = [
     subtabIconup: <HiChevronUp style={{ height: "20px", width: "20px" }} />,
     subtabIcondown: <HiChevronDown style={{ height: "20px", width: "20px" }} />,
   },
-  // {
-  //   id: 2,
-  //   title: "Course",
-  //   icon: <AiOutlineFolderOpen className="h-[20px] w-[20px]" />,
-  //   inactive: false,
-  //   // link: "/course",
-  //   subtab: [
-  //     {
-  //       subtab: "Register new courses",
-  //       link: "/register-course",
-  //     },
-  //     {
-  //       subtab: "View registered courses",
-  //       link: "/view-registered-courses",
-  //     },
-  //     {
-  //       subtab: "Print course form",
-  //       link: "/print-course-form",
-  //       tabstyle: "pb-4",
-  //     },
-  //   ],
 
-  //   subtabIconup: <HiChevronUp style={{ height: "20px", width: "20px" }} />,
-  //   subtabIcondown: <HiChevronDown style={{ height: "20px", width: "20px" }} />,
-  // },
   {
     id: 3,
     title: "My learning",

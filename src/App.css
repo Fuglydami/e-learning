@@ -294,15 +294,46 @@ div::-webkit-scrollbar-thumb {
 }
 
 .rbc-timeslot-group {
-  /* width: 50px;
-  height: 50px;
-  background-color: red; */
 }
 
-.rbc-timeslot-group.second {
-  background-color: green;
+
+
+.rbc-time-column .rbc-timeslot-group {
+    flex: 1 1;
+    /* gap: 30px; */
+    /* padding: 40px; */
 }
 
-/* .rbc-timeslot-group.third {
-  background-color: blue;
-} */
+.rbc-toolbar-label{
+  color:#C85100;
+  font-weight:700;
+size: 20px;
+}
+
+.rbc-time-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  width: 100%;
+  
+  border: 1px solid #ddd;
+ 
+  border-radius: 10px;
+}
+.rbc-label {
+    width: 90px;
+    min-width: 90px;
+    max-width: 158px;
+
+}
+
+.rbc-time-content > .rbc-time-gutter {
+  flex: none;
+  
+}
+.rbc-timeslot-group {
+  border-bottom: 1px solid #ddd;
+  min-height: 70px !important;
+  display: flex;
+  flex-flow: column nowrap;
+}

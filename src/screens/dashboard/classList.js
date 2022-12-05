@@ -62,7 +62,7 @@ const ClassList = () => {
               <p>{endTime}</p>
             </div>
             <div
-              className={`${color} cursor-pointer ${border} font-[600] w-full border-l-4 rounded p-2 `}
+              className={`${color} cursor-pointer ${border} font-[600] w-full border-l-4 rounded flex flex-col justify-center p-2`}
             >
               <p>{title}:</p>
               <p>{desc.slice(0, 23)}...</p>
