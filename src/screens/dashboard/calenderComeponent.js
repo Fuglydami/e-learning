@@ -14,7 +14,7 @@ import {
   parseISO,
   startOfToday,
 } from "date-fns";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 const meetings = [
@@ -88,6 +88,10 @@ export default function CalenderComeponent() {
   let selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
   );
+
+  useEffect(() => {
+    console.log(selectedDay, "selectedDay");
+  }, [selectedDay]);
 
   return (
     <div>

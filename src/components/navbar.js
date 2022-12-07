@@ -14,17 +14,18 @@ const notifStyle = {
   background: "#C85100",
   position: "absolute",
   right: "24.96rem",
-  top: "43.65px",
+  top: "43.45px",
 };
 const Navbar = () => {
   const { setShowSidebar, showSidebar } = useGlobalContext();
   const [show, setShow] = React.useState(false);
+
   return (
     <div className="lg:ml-10 ml-0 mt-8  flex items-center">
       <div className="flex w-full justify-between">
         <div className="flex flex-col lg:space-y-1 space-y-0 mb-7">
           <div className="flex justify-center items-center space-x-2">
-            <h2 className="text-[20px] md:text-[24px] font-bold">
+            <h2 className={` text-[20px] md:text-[24px] font-bold`}>
               Hi Titilope Ayodele
             </h2>
             <img className="animate-waving-hand" src={Wave} alt="waving-hand" />

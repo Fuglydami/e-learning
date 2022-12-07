@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { useGlobalContext } from "../../../context/globalContext";
 import CustomButton from "../../../shared/custom-button";
 import { CustomPasswordInput } from "../../../shared/custom-input";
 import { ModalWrapper } from "../../../shared/modal-wrapper";
+import { CustomToast } from "../../../shared/toast";
 
 const ShowCGPA = ({ setOpenTab, openTab }) => {
   const [password, setPassword] = useState("");
@@ -22,7 +22,8 @@ const ShowCGPA = ({ setOpenTab, openTab }) => {
       setShow(true);
       closeModal();
     } else {
-      toast.error("Enter your password!");
+      // toast.error("Enter your password!");
+      CustomToast("Enter your password!", "warning");
     }
   };
   return (

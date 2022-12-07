@@ -8,8 +8,11 @@ import ClassList from "./classList";
 import OnGoingCourse from "./onGoingCourse";
 
 const DashboardScreen = () => {
+  const skeleton = " animate-pulse bg-gray-200 dark:bg-gray-700 ";
   return (
-    <div className="flex  lg:flex-nowrap flex-wrap gap lg:gap-6 lg:ml-10 ml-0 gap-0">
+    <div
+      className={`flex lg:flex-nowrap flex-wrap gap lg:gap-6 lg:ml-10 ml-0 gap-0`}
+    >
       <div className="flex flex-col  w-full">
         <div className=" rounded-xl flex justify-between bg-base_range mb-6">
           <div className="p-5 space-y-5 lg:w-9/12 w-full">

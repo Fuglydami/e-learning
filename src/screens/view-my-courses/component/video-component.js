@@ -8,11 +8,15 @@ const VideoPlayer = () => {
 
   return (
     <>
+      {/* <video className="w-full " controls>
+        <source src={video} type="video/mp4" />
+      </video> */}
       <ReactPlayer
         width={"100%"}
         height={"444px"}
         controls
-        url="https://www.youtube.com/watch?v=ECU44OYzfb4"
+        url={"https://www.youtube.com/watch?v=IqzMUn90tMg"}
+        // url={video}
         style={{}}
       />
     </>
