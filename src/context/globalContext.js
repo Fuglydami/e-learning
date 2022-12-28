@@ -30,6 +30,7 @@ const AppProvider = ({ children }) => {
         setOpenTab,
         showSidebar,
         setShowSidebar,
+        setLoading,
         show,
         setShow,
       }}

@@ -6,27 +6,30 @@ import Notification from "../asssets/icons/notification.svg";
 import Avatar from "../asssets/images/avatar.svg";
 import Wave from "../asssets/images/wave.svg";
 import { useGlobalContext } from "../context/globalContext";
+import { getJsonItemFromLocalStorage } from "../shared/helper-functions/save-data";
 
 const notifStyle = {
   height: "7px",
   width: "7px",
   borderRadius: "3px",
   background: "#C85100",
-  position: "absolute",
-  right: "24.96rem",
-  top: "43.45px",
+  position: "relative",
+  right: "2.2rem",
+  top: "-5px",
 };
 const Navbar = () => {
   const { setShowSidebar, showSidebar } = useGlobalContext();
   const [show, setShow] = React.useState(false);
+  const userDetails = getJsonItemFromLocalStorage("user-details");
 
+  const { fullName } = userDetails;
   return (
     <div className="lg:ml-10 ml-0 mt-8  flex items-center">
       <div className="flex w-full justify-between">
         <div className="flex flex-col lg:space-y-1 space-y-0 mb-7">
           <div className="flex justify-center items-center space-x-2">
-            <h2 className={` text-[20px] md:text-[24px] font-bold`}>
-              Hi Titilope Ayodele
+            <h2 className={` text-[20px] lg:text-[24px]  font-bold`}>
+              Hi {fullName}
             </h2>
             <img className="animate-waving-hand" src={Wave} alt="waving-hand" />
           </div>
@@ -89,7 +92,7 @@ const Navbar = () => {
             />
 
             <div className="leading-[20px]">
-              <p className="font-[600] text-[14px]">Titilope Ayodele</p>
+              <p className="font-[600] text-[14px]">{fullName}</p>
               <p className=" font-[600] text-[14px] text-[#525354]">19000473</p>
             </div>
           </div>

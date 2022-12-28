@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const httpAuth = () => {
-  const baseURL = "https://random-data-api.com/api/v2/";
+  const baseURL = "https://portalsvr.proleanfinancials.biz/api/";
 
   const instance = axios.create({
     baseURL,

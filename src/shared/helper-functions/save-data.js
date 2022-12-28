@@ -1,11 +1,17 @@
 export const saveToLocalStorage = (name, itemToSave) => {
   return localStorage.setItem(name, itemToSave);
 };
+export const saveJsonItemToLocalStorage = (name, itemToSave) => {
+  return localStorage.setItem(name, JSON.stringify(itemToSave));
+};
 export const getFromLocalStorage = (name) => {
   return localStorage.getItem(name);
 };
 export const getJsonItemFromLocalStorage = (name) => {
   return JSON.parse(localStorage.getItem(name));
+};
+export const clearLocalStorage = () => {
+  return window.localStorage.clear();
 };
 export function accumulate(data) {
   let arr = [];

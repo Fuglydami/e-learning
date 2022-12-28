@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import Logout from "../../asssets/icons/logout.svg";
 import CompanyLogo from "../../asssets/images/Logo.svg";
 import { useGlobalContext } from "../../context/globalContext";
 import { navItem } from "../../misc/data";
+import { clearLocalStorage } from "../../shared/helper-functions/save-data";
 import Tab from "./tabs";
 
 const Sidebar = () => {
   const { showSidebar } = useGlobalContext();
+  let navigate = useNavigate();
 
   const [navigation, setNativation] = useState("");
   const [tab, setTab] = useState("");
@@ -64,13 +66,16 @@ const Sidebar = () => {
               // onClick={() => navigate("/")}
               className="rounded-sm absolute bottom-16 ml-4 pl-2"
             >
-              <Link
-                to="/"
-                className="flex items-center p-2 space-x-3 rounded-md"
+              <div
+                onClick={() => {
+                  clearLocalStorage();
+                  navigate("/");
+                }}
+                className="flex cursor-pointer items-center p-2 space-x-3 rounded-md"
               >
                 <img src={Logout} alt="icon" />
                 <span className=" font-medium text-[#525354]">Logout</span>
-              </Link>
+              </div>
             </nav>
           </nav>
         </div>
