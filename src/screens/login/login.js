@@ -4,7 +4,7 @@ import { LoginForm } from './loginForm';
 
 const LoginScreen = () => {
   return (
-    <main className='text-mulish overflow-scroll '>
+    <main className='text-mulish '>
       <div className='flex  h-full xl-h-screen'>
         <div className='flex flex-row w-full'>
           <Corousel />
