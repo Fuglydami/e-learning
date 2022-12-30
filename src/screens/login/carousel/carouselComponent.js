@@ -46,7 +46,7 @@ export const CarouselComponent = ({ item, current, setCurrent }) => (
       </div>
       <div className='bg-cover overflow-hidden'>
         <img
-          className='rounded-t-full  bg-cover cover align-middle w-full h-96'
+          className='rounded-t-full  object-cover align-middle w-full h-96'
           src={item.pic}
           alt='corousel-gif'
         />

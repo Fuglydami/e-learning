@@ -1,46 +1,46 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useGlobalContext } from "../../context/globalContext";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useGlobalContext } from '../../context/globalContext';
+import { navItem } from '../../misc/data';
 
 const Tab = ({ item }) => {
   const { setShowSidebar, showSidebar, setHideNavbar } = useGlobalContext();
   let activeStyle = {
-    backgroundColor: "#ffffff",
-    color: "#C85100",
-    borderRight: "4px solid #C85100",
-    display: "flex",
+    backgroundColor: '#ffffff',
+    color: '#C85100',
+    borderRight: '4px solid #C85100',
+    display: 'flex',
   };
   let activeStyleSubmenu = {
-    color: "#C85100",
+    color: '#C85100',
   };
   let inactiveStyle = {
-    backgroundColor: "inherit",
-    color: "black",
+    backgroundColor: 'inherit',
+    color: 'black',
   };
 
   const checkToggleState = () => {
     if (
-      item.title === "My learning" ||
-      item.title === "Course" ||
-      item.title === "Payment"
+      item.title === 'My learning' ||
+      item.title === 'Course' ||
+      item.title === 'Payment'
     ) {
       return inactiveStyle;
     } else {
       return activeStyle;
     }
   };
-
   const [showNav, setShowNav] = useState(false);
-
-  const handleNav = () => {
-    setShowNav(!showNav);
-
+  const handleNav = (data) => {
     if (
-      item.title === "My learning" ||
-      item.title === "Course" ||
-      item.title === "Payment"
+      item.title === 'My learning' ||
+      item.title === 'Course' ||
+      item.title === 'Payment'
     ) {
-      return null;
+      const filteredData = navItem.filter((arr) => arr.id === data.id);
+      // setShowNav((showNav) => filteredData.id === data.id && !showNav);
+
+      setShowNav((showNav) => !showNav);
     } else {
       setShowSidebar(false);
     }
@@ -59,41 +59,45 @@ const Tab = ({ item }) => {
           // return isActive ? checkToggleState() : undefined;
         }}
       >
-        <div
-          onClick={handleNav}
-          className="flex items-center w-full justify-between p-2"
+        <button
+          onClick={() => {
+            handleNav(item);
+          }}
+          className='flex items-center w-full  justify-between p-2'
         >
-          <div className="flex items-center space-x-3 ">
+          <div className='flex items-center space-x-3 '>
             <span>{item.icon}</span>
-            <span className={""}>{item.title}</span>
+            <span className={''}>{item.title}</span>
           </div>
           <div>{showNav ? item.subtabIconup : item.subtabIcondown}</div>
-        </div>
+        </button>
       </NavLink>
       {showNav && (
-        <div className={`cursor-pointer bg-customWhite`}>
+        <div
+          onClick={() => setShowNav(true)}
+          className={`cursor-pointer  bg-customWhite`}
+        >
           {item.subtab &&
-            item.subtab.map((i) => {
+            item.subtab.map((i, index) => {
+              const key = `${i.subtab}-${index}`;
               return (
-                <NavLink
-                  to={i.link}
-                  style={({ isActive }) => {
-                    if (isActive) {
-                      return activeStyleSubmenu;
-                    }
-                    // return isActive ? activeStyleSubmenu  : undefined;
-                  }}
-                  onClick={() => setShowSidebar(false)}
-                  // style={(match, location) => {
-                  //   console.log(match, location);
-                  //   return location.pathname.startsWith(i.link);
-                  // }}
-
-                  className="nav-sub-link text-[14px] font-[400] flex mx-auto  gap-[15px] space-y-4 space-x-2   pl-4"
-                  activeClassName="activeThing"
-                >
-                  <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
-                </NavLink>
+                <div>
+                  <NavLink
+                    key={key}
+                    to={i.link}
+                    style={({ isActive }) => {
+                      if (isActive) {
+                        return activeStyleSubmenu;
+                      }
+                    }}
+                    onClick={() => {
+                      setShowSidebar(false);
+                    }}
+                    className='nav-sub-link text-[14px] font-[400] flex mx-auto  gap-[15px] space-y-4 space-x-2 text-[#525354]  pl-4'
+                  >
+                    <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
+                  </NavLink>
+                </div>
               );
             })}
         </div>

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { CiSearch } from "react-icons/ci";
-import Navbar from "../components/navbar";
-import Sidebar from "../components/sidebar/sidebar";
-import { useGlobalContext } from "../context/globalContext";
+import React, { useEffect } from 'react';
+import { CiSearch } from 'react-icons/ci';
+import Navbar from '../components/navbar';
+import Sidebar from '../components/sidebar/sidebar';
+import { useGlobalContext } from '../context/globalContext';
 
 export const Container = ({ children }) => {
   return (
@@ -25,11 +25,13 @@ export const MainContainer = ({ children }) => {
   return (
     <div className={` flex font-mulish`}>
       <Sidebar />
-      <div className={` md:relative block lg:left-[230px] left-[0px] home`}>
+      <div className={` md:relative block lg:left-[222px] left-[0px] home`}>
         <div className={`  lg:px-2 px-4`}>
-          <Navbar />
+          <div className='fixed bg-[#FBFBFB]  z-30 home'>
+            <Navbar />
+          </div>
           <div
-            className="animate-in slide-in-from-left-48 duration-300"
+            className='relative top-32 animate-in home slide-in-from-left-48 duration-300'
             onClick={() => setShowSidebar(false)}
           >
             {children}
@@ -52,22 +54,24 @@ export const SectionContainer = ({ children }) => {
 };
 export const Title = ({ title, show, children, childrenClass }) => {
   return (
-    <section className="flex lg:flex-row flex-col md:pt-0 pt-4  w-full justify-between">
-      <div className="flex px-2 lg:px-0 ">
-        <p className="font-Quicksand font-bold md:pb-0 pb-2 text-xl">{title}</p>
+    <section className='flex flex-row  lg:py-4 py-0 pt-3 lg:pt-0 items-center w-full justify-between'>
+      <div className='flex px-2 lg:px-0 '>
+        <p className='font-Quicksand font-bold md:pb-0 pb-2 lg:text-xl text-md'>
+          {title}
+        </p>
       </div>
       <div>
         {show ? (
-          <>
+          <div className=''>
             <input
-              className=" bg-[#F2F5F3] placeholder:text-[#898D88] md:w-[289px]  w-full h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-              type="search"
-              name="search"
-              placeholder="Search a Course"
+              className=' bg-[#F2F5F3] placeholder:text-[#898D88] md:w-[289px] w-[200px] h-10 px-5 lg:pr-16 rounded-lg text-sm focus:outline-none'
+              type='search'
+              name='search'
+              placeholder='Search a Course'
             />
 
-            <CiSearch className="relative bottom-7 md:left-64  left-80" />
-          </>
+            <CiSearch className='relative bottom-7 md:left-64  left-40' />
+          </div>
         ) : (
           <div className={childrenClass}>{children}</div>
         )}
