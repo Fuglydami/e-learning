@@ -43,7 +43,7 @@ const Sidebar = () => {
           showSidebar
             ? 'flex animate-in py-5 slide-in-from-left-48 '
             : 'hidden '
-        } flex-col h-screen fixed z-40 py-10  bg-[#FFF1E7] shadow md:w-[240px] w-[98%] `}
+        } flex-col h-screen fixed z-40 py-10  bg-[#FFF1E7] shadow lg:w-[240px] w-[98%] `}
       >
         <div className='space-y-3'>
           <div className='flex lg:mb-10 mb-6  items-center lg:justify-start justify-between space-x-3 px-6'>
