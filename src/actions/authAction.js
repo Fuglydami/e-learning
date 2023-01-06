@@ -4,7 +4,7 @@ import { httpAuth } from '../shared/userService';
 
 const handleError = (error) => {
   if (error.code === 'ERR_NETWORK') {
-    toast.error('Check your internet connection', toastData);
+    toast.error('An error occur, please try again', toastData);
     // CustomToast(error.message, 'danger');
   } else {
     // CustomToast(error.response.data, 'danger');

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar/navbar';
+
 import Sidebar from '../components/sidebar/sidebar';
 import { useGlobalContext } from '../context/globalContext';
 
