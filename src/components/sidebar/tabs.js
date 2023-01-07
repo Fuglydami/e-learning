@@ -56,7 +56,6 @@ const Tab = ({ item }) => {
           if (isActive) {
             return checkToggleState();
           }
-          // return isActive ? checkToggleState() : undefined;
         }}
       >
         <button

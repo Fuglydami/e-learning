@@ -6,7 +6,9 @@ const Notification = ({ notificationData }) => {
     <div className=' absolute top-2 right-16 w-[375px] shadow-lg rounded-lg bg-customWhite'>
       <div className='flex p-5 justify-between items-center'>
         <h3 className='font-[700] text-[18px]'>Notifications</h3>
-        <p className='text-[12px] text-base_range'>Clear all</p>
+        <p className='text-[12px] hover:bg-sidebarOrange  hover:px-2 hover:rounded-full transition-all cursor-pointer text-base_range'>
+          Clear all
+        </p>
       </div>
       <p className=' px-5 text-[14px] font-[400] text-lightGrey mt-2'>Today</p>
       {notificationData.map((data, index) => {
