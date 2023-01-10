@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { login } from '../../actions/authAction';
 import CompanyLogo from '../../asssets/images/Logo.svg';
 import { useGlobalContext } from '../../context/globalContext';
+import { posthttp } from '../../services/actions';
+import { AUTH } from '../../services/api-url';
 import CustomButton from '../../shared/custom-button';
 import {
   CustomPasswordInput,
@@ -35,9 +36,13 @@ export const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const payload = {
+      username: value,
+      password: password,
+    };
     if (value && password) {
       setLoading(true);
-      const data = await login(value, password);
+      const data = await posthttp(AUTH, payload);
       if (data && data.status === 200) {
         saveJsonItemToLocalStorage('token-details', data.data.token);
         saveJsonItemToLocalStorage('user-details', data.data.data);

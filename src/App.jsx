@@ -42,7 +42,7 @@ const CreateDispute = lazy(() =>
   import('./screens/dispute-payment-list/create-dispute')
 );
 const Dashboard = lazy(() => import('./screens/dashboard/home'));
-const Courses = lazy(() => import('./screens/courses/courses'));
+
 const ClassSchedule = lazy(() =>
   import('./screens/class-schedule/class-schedule')
 );
@@ -70,7 +70,7 @@ function App() {
               path='/dashboard'
               element={<Dashboard />}
             />
-            <Route path='/course' element={<Courses />} />
+
             <Route path='/my-learning' element={<ViewMyCourses />} />
             <Route path='my-learning/:courseId' element={<CourseDetails />} />
             <Route path='/register-course' element={<RegisterCourses />} />
