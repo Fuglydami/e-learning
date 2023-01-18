@@ -13,7 +13,7 @@ const CustomButton = ({
   const container = ` ${containerStyle}`;
   const buttonclassName = `${
     loading && 'cursor-not-allowed'
-  } flex gap-2 items-center justify-center ${borderRadius} rounded-md font-mulish border border-transparent ${padding}   text-[20px] font-medium   focus:outline-none transition duration-150 ease-in-out  focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2  ${buttonStyle}`;
+  } flex gap-2 items-center bg-base_range hover:bg-[#ac4500] justify-center ${borderRadius} rounded-md font-mulish border border-transparent ${padding}   text-[20px] font-medium   focus:outline-none transition duration-150 ease-in-out  focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2  ${buttonStyle}`;
   return (
     <div className={container}>
       <button

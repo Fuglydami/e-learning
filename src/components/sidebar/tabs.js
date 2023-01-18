@@ -80,23 +80,21 @@ const Tab = ({ item }) => {
             item.subtab.map((i, index) => {
               const key = `${i.subtab}-${index}`;
               return (
-                <div>
-                  <NavLink
-                    key={key}
-                    to={i.link}
-                    style={({ isActive }) => {
-                      if (isActive) {
-                        return activeStyleSubmenu;
-                      }
-                    }}
-                    onClick={() => {
-                      setShowSidebar(false);
-                    }}
-                    className='nav-sub-link text-[14px] font-[400] flex mx-auto  gap-[15px] space-y-4 space-x-2 text-[#525354]  pl-4'
-                  >
-                    <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
-                  </NavLink>
-                </div>
+                <NavLink
+                  key={key}
+                  to={i.link}
+                  style={({ isActive }) => {
+                    if (isActive) {
+                      return activeStyleSubmenu;
+                    }
+                  }}
+                  onClick={() => {
+                    setShowSidebar(false);
+                  }}
+                  className='nav-sub-link text-[14px] font-[400] flex mx-auto  gap-[15px] space-y-4 space-x-2 text-[#525354]  pl-4'
+                >
+                  <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
+                </NavLink>
               );
             })}
         </div>

@@ -52,6 +52,7 @@ export const CustomSelectInput = ({
       <select
         placeholder={placeholder}
         id='countries'
+        defaultValue={placeholder}
         className='bg-inputColor placeholder:font-[600] focus:ring-1 border-none outline-none  ring-[#ffddbe]   rounded-lg  w-full px-2.5 py-4 '
       >
         <option selected>{placeholder}</option>
