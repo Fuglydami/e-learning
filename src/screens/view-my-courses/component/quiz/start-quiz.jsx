@@ -243,14 +243,22 @@ const StartQuiz = () => {
                   onClick={() => setSuccess(true)}
                   buttonStyle='bg-base_range white  w-full text-[18px] font-[600]  py-4 '
                 />
-                <CustomButton
+                <button
+                  className='text-base_range w-full rounded-xl hover:bg-sidebarOrange text-[18px] font-[600] py-4 '
+                  onClick={() => {
+                    closeModal();
+                  }}
+                >
+                  Close
+                </button>
+                {/* <CustomButton
                   title={'Close'}
                   onClick={() => {
                     closeModal();
                   }}
                   containerStyle={'w-full'}
                   buttonStyle='text-base_range w-full text-[18px] font-[600] py-4 '
-                />
+                /> */}
               </div>
             }
             buttonText={'Check out disputes'}

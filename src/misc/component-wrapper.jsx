@@ -32,7 +32,7 @@ export const MainContainer = ({ children }) => {
             <Navbar />
           </div>
           <div
-            className='relative top-32 animate-in home slide-in-from-left-48 duration-300'
+            className='relative top-36  animate-in home slide-in-from-left-48 duration-300'
             onClick={() => setShowSidebar(false)}
           >
             {children}

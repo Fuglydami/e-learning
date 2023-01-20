@@ -5,8 +5,10 @@ import Logout from '../../asssets/icons/logout.svg';
 import CompanyLogo from '../../asssets/images/Logo.svg';
 import { useGlobalContext } from '../../context/globalContext';
 import { navItem } from '../../misc/data';
+// import { navItem } from '../../misc/data';
 import { clearLocalStorage } from '../../shared/helper-functions/save-data';
 import Tab from './tabs';
+// import Tab from './tabs';
 
 const Sidebar = () => {
   const { setShowSidebar, showSidebar } = useGlobalContext();

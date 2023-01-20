@@ -47,7 +47,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className='lg:ml-10 ml-0 mt-8  flex items-center '>
+    <div className='lg:ml-10 ml-0 mt-8  flex items-center'>
       <div className='flex w-full justify-between'>
         <div className='flex flex-col lg:space-y-1 space-y-0 mb-7'>
           <div className='flex justify-center items-center space-x-2'>
