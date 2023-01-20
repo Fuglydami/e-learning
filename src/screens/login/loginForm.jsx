@@ -21,6 +21,7 @@ import VerifyPasword from '../reset-password/verify-password';
 export const LoginForm = () => {
   const { loading, setLoading } = useGlobalContext();
   let navigate = useNavigate();
+
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
   const [isOpen, setIsOpen] = useState(false);

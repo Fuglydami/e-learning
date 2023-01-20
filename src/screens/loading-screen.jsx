@@ -1,14 +1,15 @@
 import React from 'react';
 import { ProgressBar } from 'react-loader-spinner';
+import { useLocation } from 'react-router-dom';
 import CompanyLogo from '../asssets/images/Logo.svg';
 import Sidebar from '../components/sidebar/sidebar';
-import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
 
 const LoadingScreen = () => {
-  const token = getJsonItemFromLocalStorage('token-details');
+  const { pathname } = useLocation();
+
   return (
     <>
-      {token && <Sidebar />}
+      {pathname !== '/' && <Sidebar />}
 
       <div className='flex flex-col justify-center h-screen items-center'>
         <img
