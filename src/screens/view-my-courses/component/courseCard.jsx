@@ -14,7 +14,7 @@ const CourseCard = ({ item }) => {
   //   console.log(JSON.parse(progressBar), "pre");
 
   return (
-    <div className='bg-customWhite rounded-t-lg shadow-xl cursor-pointer   rounded-lg'>
+    <div className='bg-customWhite rounded-t-lg  shadow-xl hover:shadow-2xl cursor-pointer ease-in-out duration-300  rounded-lg'>
       <picture>
         <img
           className='h-[198px] object-cover   rounded-t-xl w-full'

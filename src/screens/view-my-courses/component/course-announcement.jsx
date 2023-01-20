@@ -35,7 +35,7 @@ const CourseAnnouncement = () => {
               <CustomButton
                 padding=' py-2 '
                 title={'view'}
-                borderRadius={'rounded-[8px]'}
+                borderRadius={'8px'}
                 buttonStyle={' bg-base_range  white text-[12px] w-[61px]'}
               />
             </div>

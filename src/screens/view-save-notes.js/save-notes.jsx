@@ -56,7 +56,7 @@ const SaveNotes = () => {
               <div className='flex md:p-0 p-3 items-center'>
                 <CustomButton
                   icon={item.icon}
-                  borderRadius={'lg:rounded-[8px]'}
+                  borderRadius={'8px'}
                   title={'Delete'}
                   buttonStyle='bg-base_range white  w-full text-[15px]  py-3 rounded-md w-[102px] '
                 />

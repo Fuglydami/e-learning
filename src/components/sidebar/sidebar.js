@@ -17,6 +17,7 @@ const Sidebar = () => {
   const [navigation, setNativation] = useState('');
   const [tab, setTab] = useState('');
   const location = useLocation();
+
   const [show, setShow] = useState(true);
 
   const { pathname } = location;

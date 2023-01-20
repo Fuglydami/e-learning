@@ -22,3 +22,12 @@ export const toastData = {
   progress: undefined,
   theme: 'light',
 };
+export let activeStyle = {
+  backgroundColor: '#ffffff',
+  color: '#C85100',
+  borderRight: '4px solid #C85100',
+  display: 'flex',
+};
+export let activeStyleSubmenu = {
+  color: '#C85100',
+};

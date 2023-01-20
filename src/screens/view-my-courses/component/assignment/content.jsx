@@ -23,6 +23,7 @@ const Content = () => {
         <div className='flex items-end'>
           <CustomButton
             title={'Start'}
+            borderRadius={'8px'}
             buttonStyle={'bg-base_range white text-[14px] rounded'}
             padding='px-7 py-2'
           />
