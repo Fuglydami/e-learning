@@ -15,7 +15,7 @@ export const Success = ({
       buttonStyle='bg-base_range white  w-full text-[18px] font-[600]  py-4 '
     />
   ),
-  icon = <img src={success} alt='success' />,
+  icon = <img src={success} loading='lazy' alt='success' />,
   setToggleModal,
 }) => {
   return (

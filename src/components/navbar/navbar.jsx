@@ -54,7 +54,12 @@ const Navbar = () => {
             <h2 className={` text-[20px] lg:text-[24px]  font-bold`}>
               Hi {fullName}
             </h2>
-            <img className='animate-waving-hand' src={Wave} alt='waving-hand' />
+            <img
+              loading='lazy'
+              className='animate-waving-hand'
+              src={Wave}
+              alt='waving-hand'
+            />
           </div>
           <p className='text-lightGrey text-md md:text-xl font-[400] text-green-100'>
             Let’s start learning
@@ -78,6 +83,7 @@ const Navbar = () => {
                   <img
                     className='h-[27px]  w-[22px] cursor-pointer'
                     src={NotificationIcon}
+                    loading='lazy'
                     alt='message'
                   />
                 </Popover.Button>
@@ -106,6 +112,7 @@ const Navbar = () => {
             <img
               className='h-[40px] w-[40px] flex'
               src={Avatar}
+              loading='lazy'
               alt='message'
             />
 

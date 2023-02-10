@@ -9,7 +9,7 @@ const EmptyDispute = () => {
     <div className='my-20  space-y-12 w-full mx-auto  text-center lg:mb-8 mb-0'>
       <div>
         <div className='flex justify-center mb-5'>
-          <img src={Payment} alt='no-course-illustration' />
+          <img src={Payment} alt='no-course-illustration' loading='lazy' />
         </div>
         <h3 className='font-quicksand font-[700] text-[20px] space-x-2'>
           No Dispute yet.

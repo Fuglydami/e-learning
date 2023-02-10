@@ -230,7 +230,7 @@ const StartQuiz = () => {
           />
         ) : (
           <Success
-            icon={<img src={Verify} alt='success' />}
+            icon={<img src={Verify} alt='success' loading='lazy' />}
             title={'Submit Quiz?'}
             paragraph={
               'You have successfully reported an unsuccessful transaction.'

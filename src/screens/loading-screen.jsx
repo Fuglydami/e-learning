@@ -13,6 +13,7 @@ const LoadingScreen = () => {
 
       <div className='flex flex-col justify-center h-screen items-center'>
         <img
+          loading='lazy'
           src={CompanyLogo}
           className='h-[70px] w-[70px]'
           alt='loading component'

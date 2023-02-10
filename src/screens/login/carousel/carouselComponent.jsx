@@ -10,7 +10,7 @@ export const CarouselComponent = ({ item, current, setCurrent }) => (
   >
     <div className='flex items-center justify-start space-x-3 '>
       <div className=' w-12 h-14 flex items-center'>
-        <img src={CompanyLogo} alt='company-logo' />
+        <img src={CompanyLogo} alt='company-logo' loading='lazy' />
       </div>
       <span className='font-bold text-base_range text-xl'>LODLC</span>
     </div>
@@ -48,6 +48,7 @@ export const CarouselComponent = ({ item, current, setCurrent }) => (
         <img
           className='rounded-t-full  object-cover align-middle w-full h-96'
           src={item.pic}
+          loading='lazy'
           alt='corousel-gif'
         />
       </div>

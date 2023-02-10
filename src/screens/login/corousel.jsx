@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { items } from "../../misc/data";
+import React, { useEffect, useState } from 'react';
+import { items } from '../../misc/data';
 
-import { CarouselComponent } from "./carousel/carouselComponent";
+import { CarouselComponent } from './carousel/carouselComponent';
 
 const Corousel = () => {
   const [current, setCurrent] = useState(0);
@@ -24,8 +24,8 @@ const Corousel = () => {
   };
 
   return (
-    <div className="carousel">
-      <div className=" flex">
+    <div className='carousel'>
+      <div className=' flex'>
         {items.map((item, index) => {
           return (
             /* (condition) ? true : false */
@@ -33,8 +33,8 @@ const Corousel = () => {
               key={index}
               className={
                 index === current
-                  ? "carousel_card carousel_card-active"
-                  : "hidden"
+                  ? 'carousel_card carousel_card-active'
+                  : 'hidden'
               }
             >
               <CarouselComponent

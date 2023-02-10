@@ -62,12 +62,12 @@ export const LoginForm = () => {
       <div className='flex mt-16 xl:mt-0  flex-1 flex-col  justify-center lg:items-start items-center ml-0  xl:ml-32 relative'>
         <div className='lg:hidden  flex h-[15%] relative -top-[50px] items-center justify-center bg-dark_range w-full mb-6 -mt-4   px-4 space-x-3'>
           <div className=' w-12 h-14 flex items-center'>
-            <img src={CompanyLogo} alt='company-logo' />
+            <img src={CompanyLogo} alt='company-logo' loading='lazy' />
           </div>
           <span className='font-bold mt-6 text-base_range text-2xl'>LODLC</span>
         </div>
         <div className='flex  flex-1 flex-col  xl:justify-center w-full px-4 lg:px-8 xl:px-0 lg:max-w-lg'>
-          <div className='flex flex-col space-y-4 mb-7'>
+          <div className='flex flex-col space-y-4 mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold'>Login</h2>
             <p className='text-lightGrey text-md md:text-xl text-green-100'>
               Login to access lectures and account informations
@@ -93,7 +93,7 @@ export const LoginForm = () => {
                 openModal();
                 setToggleModal('forget-password');
               }}
-              className='font-semibold text-base_range  float-right mb-12 cursor-pointer'
+              className='font-semibold text-base_range  float-right mb-20 cursor-pointer'
             >
               Forgot Password?
             </p>

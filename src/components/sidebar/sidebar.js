@@ -51,7 +51,7 @@ const Sidebar = () => {
         <div className='space-y-3'>
           <div className='flex lg:mb-10 mb-6  items-center lg:justify-start justify-between space-x-3 px-6'>
             <div className='w-12 h-14 flex items-center'>
-              <img src={CompanyLogo} alt='company-logo' />
+              <img src={CompanyLogo} alt='company-logo' loading='lazy' />
             </div>
             <div
               className='lg:hidden block'
@@ -85,7 +85,7 @@ const Sidebar = () => {
                   }}
                   className='flex cursor-pointer items-center p-2 space-x-3 rounded-md'
                 >
-                  <img src={Logout} alt='icon' />
+                  <img loading='lazy' src={Logout} alt='icon' />
                   <span className=' font-medium text-[#525354]'>Logout</span>
                 </div>
               </nav>

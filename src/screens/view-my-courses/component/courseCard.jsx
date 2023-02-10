@@ -19,6 +19,7 @@ const CourseCard = ({ item }) => {
         <img
           className='h-[198px] object-cover   rounded-t-xl w-full'
           src={image}
+          loading='lazy'
           alt=''
         />
       </picture>

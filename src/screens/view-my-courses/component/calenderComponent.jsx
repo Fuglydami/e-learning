@@ -231,6 +231,7 @@ function Meeting({ meeting }) {
       <img
         src={meeting.imageUrl}
         alt=''
+        loading='lazy'
         className='flex-none w-10 h-10 rounded-full'
       />
       <div className='flex-auto'>

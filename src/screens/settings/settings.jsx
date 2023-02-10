@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import Avatar from "../../asssets/images/avatar.svg";
-import { useGlobalContext } from "../../context/globalContext";
-import { Container, MainContainer, Title } from "../../misc/component-wrapper";
+import React, { useEffect } from 'react';
+import Avatar from '../../asssets/images/avatar.svg';
+import { useGlobalContext } from '../../context/globalContext';
+import { Container, MainContainer, Title } from '../../misc/component-wrapper';
 
-import Biodata from "./components/biodata";
-import HelpCenter from "./components/helpCenter";
-import Notification from "./components/notification";
-import Security from "./components/security";
-import ShowCGPA from "./components/showCGPA";
+import Biodata from './components/biodata';
+import HelpCenter from './components/helpCenter';
+import Notification from './components/notification';
+import Security from './components/security';
+import ShowCGPA from './components/showCGPA';
 
 const Settings = () => {
-  const active = "my-auto  bg-sidebarOrange text-base_range";
+  const active = 'my-auto  bg-sidebarOrange text-base_range';
   const restofstyle =
-    "my-auto inline-block px-4 py-2   cursor-pointer text-lightGrey";
+    'my-auto inline-block px-4 py-2   cursor-pointer text-lightGrey';
   const { openTab, setOpenTab, setShow } = useGlobalContext();
   useEffect(() => {
     setShow(false);
@@ -20,36 +20,37 @@ const Settings = () => {
   return (
     <MainContainer>
       <Container>
-        <Title title={"Settings"} />
-        <section className="grid lg:grid-cols-4 grid-cols-1 lg:gap-4 gap-0 w-full md:pt-12 pt-4  my-2">
-          <article className="bg-[#FBFBFB] h-[272px] rounded-lg  ">
-            <div className="mx-auto w-4/5 mt-7">
-              <div className="flex items-center justify-center ">
+        <Title title={'Settings'} />
+        <section className='grid lg:grid-cols-4 grid-cols-1 lg:gap-4 gap-0 w-full md:pt-12 pt-4  my-2'>
+          <article className='bg-[#FBFBFB] h-[272px] rounded-lg  '>
+            <div className='mx-auto w-4/5 mt-7'>
+              <div className='flex items-center justify-center '>
                 <img
-                  className="md:h-[96px] md:w-[96px] h-[70px] w-[70px]"
+                  className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
                   src={Avatar}
-                  alt="avatar"
+                  alt='avatar'
+                  loading='lazy'
                 />
               </div>
-              <p className="text-[24px] font-[600] my-3 text-center">
+              <p className='text-[24px] font-[600] my-3 text-center'>
                 Titilope Ayodele
               </p>
-              <div className="space-y-3">
-                <div className="flex justify-between font-[600]">
-                  <p className="text-lightGrey">Matric No:</p>
+              <div className='space-y-3'>
+                <div className='flex justify-between font-[600]'>
+                  <p className='text-lightGrey'>Matric No:</p>
                   <p>19000473</p>
                 </div>
-                <div className="flex justify-between font-[600]">
-                  <p className="text-lightGrey">Current Level:</p>
+                <div className='flex justify-between font-[600]'>
+                  <p className='text-lightGrey'>Current Level:</p>
                   <p>200 Level</p>
                 </div>
               </div>
             </div>
           </article>
-          <article className="col-span-3 ">
-            <div className="flex flex-col mt-6 justify-center ">
-              <div className="border-extraLightGrey border-b ">
-                <ul className="flex text-xs md:w-5/6 w-full flex-wrap justify-between lg:text-base whitespace-nowrap space-x-2 ">
+          <article className='col-span-3 '>
+            <div className='flex flex-col mt-6 justify-center '>
+              <div className='border-extraLightGrey border-b '>
+                <ul className='flex text-xs md:w-5/6 w-full flex-wrap justify-between lg:text-base whitespace-nowrap space-x-2 '>
                   <li
                     onClick={() => {
                       setOpenTab(1);
@@ -97,20 +98,20 @@ const Settings = () => {
                   </li>
                 </ul>
               </div>
-              <div className="lg:w-5/6 w-full p-2">
-                <div className={openTab === 1 ? "block" : "hidden"}>
+              <div className='lg:w-5/6 w-full p-2'>
+                <div className={openTab === 1 ? 'block' : 'hidden'}>
                   <Biodata />
                 </div>
-                <div className={openTab === 2 ? "block" : "hidden"}>
+                <div className={openTab === 2 ? 'block' : 'hidden'}>
                   <Notification />
                 </div>
-                <div className={openTab === 3 ? "block" : "hidden"}>
+                <div className={openTab === 3 ? 'block' : 'hidden'}>
                   <ShowCGPA setOpenTab={setOpenTab} openTab={openTab} />
                 </div>
-                <div className={openTab === 4 ? "block" : "hidden"}>
+                <div className={openTab === 4 ? 'block' : 'hidden'}>
                   <Security />
                 </div>
-                <div className={openTab === 5 ? "block" : "hidden"}>
+                <div className={openTab === 5 ? 'block' : 'hidden'}>
                   <HelpCenter />
                 </div>
               </div>

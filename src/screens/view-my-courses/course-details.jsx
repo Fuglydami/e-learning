@@ -25,6 +25,7 @@ const CourseDetails = () => {
                 className='h-[336px] bg-cover rounded-t-xl w-full'
                 src={item.image}
                 alt=''
+                loading='lazy'
               />
             </div>
             <div className='font-[700] text-[24px]'>

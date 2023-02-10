@@ -39,6 +39,7 @@ const SaveNotes = () => {
               <div className=' flex md:flex-row flex-col items-center md:space-x-8 space-x-0 cursor-pointer'>
                 <img
                   src={item.image}
+                  loading='lazy'
                   alt='course-img'
                   className='md:w-[232px] object-cover w-full rounded-tr-xl rounded-tl-xl h-[147px]'
                 />
