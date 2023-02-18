@@ -79,13 +79,13 @@ export const LoginForm = () => {
               value={value}
               textColor={'mb-3'}
               onChange={(e) => setValue(e.target.value)}
-              placeholder={'Enter your Username or Matric no'}
+              placeholder={'Nou13346999'}
             />
             <CustomPasswordInput
               label={'Password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder={'Enter your Password'}
+              placeholder={'damilare123'}
             />
 
             <p

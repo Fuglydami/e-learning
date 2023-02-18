@@ -1,20 +1,20 @@
-import { AiOutlineFolderOpen } from "react-icons/ai";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi";
-import { IoReceiptOutline } from "react-icons/io5";
-import { RiSettings4Line } from "react-icons/ri";
-import { TbNotes, TbSmartHome } from "react-icons/tb";
-import { VscNotebookTemplate } from "react-icons/vsc";
-import Onboarding1 from "../asssets/images/Onboarding 1.gif";
-import Onboarding2 from "../asssets/images/Onboarding 2.gif";
-import Onboarding3 from "../asssets/images/Onboarding 3.gif";
+import { AiOutlineFolderOpen } from 'react-icons/ai';
+import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
+import { IoReceiptOutline } from 'react-icons/io5';
+import { RiSettings4Line } from 'react-icons/ri';
+import { TbNotes, TbSmartHome } from 'react-icons/tb';
+import { VscNotebookTemplate } from 'react-icons/vsc';
+import Onboarding1 from '../asssets/images/Onboarding 1.gif';
+import Onboarding2 from '../asssets/images/Onboarding 2.gif';
+import Onboarding3 from '../asssets/images/Onboarding 3.gif';
 
 export const items = [
   {
     id: 1,
     title: (
       <div>
-        Get notified on your class{" "}
-        <span className="text-base_range">schedules</span>{" "}
+        Get notified on your class{' '}
+        <span className='text-base_range'>schedules</span>{' '}
       </div>
     ),
     paragraph: `One time notification and class schedule to keep you in check and avoid missing classes`,
@@ -24,7 +24,7 @@ export const items = [
     id: 2,
     title: (
       <div>
-        Attend classes from <span className="text-base_range">anywhere</span>{" "}
+        Attend classes from <span className='text-base_range'>anywhere</span>{' '}
         you are.
       </div>
     ),
@@ -36,8 +36,8 @@ export const items = [
     id: 3,
     title: (
       <div>
-        {" "}
-        Access to past <span className="text-base_range">classes</span>
+        {' '}
+        Access to past <span className='text-base_range'>classes</span>
       </div>
     ),
     paragraph: `Videos and material from previous week and classes can be accessed, read and revised`,
@@ -47,46 +47,46 @@ export const items = [
 export const customStyles = {
   rows: {
     style: {
-      minHeight: "60px", // override the row height
-      fontWeight: "600",
-      fontSize: "16px",
+      minHeight: '60px', // override the row height
+      fontWeight: '600',
+      fontSize: '16px',
     },
   },
   title: {
     style: {
-      fontWeight: "700",
-      fontSize: "16px",
+      fontWeight: '700',
+      fontSize: '16px',
     },
   },
   headCells: {
     style: {
-      minHeight: "51px", // override the row height
-      backgroundColor: "#FFF1E7",
-      fontWeight: "700",
-      fontSize: "16px",
+      minHeight: '51px', // override the row height
+      backgroundColor: '#FFF1E7',
+      fontWeight: '700',
+      fontSize: '16px',
     },
   },
 };
 export const customStyles1 = {
   rows: {
     style: {
-      minHeight: "60px", // override the row height
-      fontWeight: "600",
-      fontSize: "14px",
+      minHeight: '60px', // override the row height
+      fontWeight: '600',
+      fontSize: '14px',
     },
   },
   title: {
     style: {
-      fontWeight: "700",
-      fontSize: "14px",
+      fontWeight: '700',
+      fontSize: '14px',
     },
   },
   headCells: {
     style: {
-      minHeight: "51px", // override the row height
-      backgroundColor: "#FFF1E7",
-      fontWeight: "700",
-      fontSize: "14px",
+      minHeight: '51px', // override the row height
+      backgroundColor: '#FFF1E7',
+      fontWeight: '700',
+      fontSize: '14px',
     },
   },
 };
@@ -94,108 +94,108 @@ export const customStyles1 = {
 export const navItem = [
   {
     id: 1,
-    title: "Dashboard",
-    icon: <TbSmartHome className="h-[20px] w-[20px]" />,
+    title: 'Dashboard',
+    icon: <TbSmartHome className='h-[20px] w-[20px]' />,
     inactive: false,
-    link: "/dashboard",
+    link: '/dashboard',
   },
   {
     id: 2,
-    title: "Course",
-    icon: <AiOutlineFolderOpen className="h-[20px] w-[20px]" />,
+    title: 'Courses',
+    icon: <AiOutlineFolderOpen className='h-[20px] w-[20px]' />,
     inactive: false,
     subtab: [
       {
-        subtab: "Register new courses",
-        link: "/register-course",
+        subtab: 'Register new courses',
+        link: '/register-course',
       },
       {
-        subtab: "View registered courses",
-        link: "/view-registered-courses",
+        subtab: 'View registered courses',
+        link: '/view-registered-courses',
       },
       {
-        subtab: "Print course form",
-        link: "/print-all-course",
-        tabstyle: "pb-4",
+        subtab: 'Print course form',
+        link: '/print-all-course',
+        tabstyle: 'pb-4',
       },
     ],
-    subtabIconup: <HiChevronUp style={{ height: "20px", width: "20px" }} />,
-    subtabIcondown: <HiChevronDown style={{ height: "20px", width: "20px" }} />,
+    subtabIconup: <HiChevronUp style={{ height: '20px', width: '20px' }} />,
+    subtabIcondown: <HiChevronDown style={{ height: '20px', width: '20px' }} />,
   },
 
   {
     id: 3,
-    title: "My learning",
-    icon: <TbNotes className="h-[20px] w-[20px]" />,
+    title: 'My learnings',
+    icon: <TbNotes className='h-[20px] w-[20px]' />,
     subtab: [
       {
-        subtab: "View my courses",
-        link: "/my-learning",
+        subtab: 'View my courses',
+        link: '/my-learning',
       },
       {
-        subtab: "View saved notes",
-        link: "/save-notes",
+        subtab: 'View saved notes',
+        link: '/save-notes',
       },
       {
-        subtab: "View my class schedule",
-        link: "/class-schedule",
-        tabstyle: "pb-4",
+        subtab: 'View my class schedules',
+        link: '/class-schedule',
+        tabstyle: 'pb-4',
       },
     ],
     inactive: false,
 
-    subtabIconup: <HiChevronUp style={{ height: "20px", width: "20px" }} />,
-    subtabIcondown: <HiChevronDown style={{ height: "20px", width: "20px" }} />,
+    subtabIconup: <HiChevronUp style={{ height: '20px', width: '20px' }} />,
+    subtabIcondown: <HiChevronDown style={{ height: '20px', width: '20px' }} />,
   },
   {
     id: 4,
-    title: "Payment",
-    icon: <IoReceiptOutline className="h-[20px] w-[20px]" />,
+    title: 'Payments',
+    icon: <IoReceiptOutline className='h-[20px] w-[20px]' />,
     inactive: false,
 
     subtab: [
       {
-        subtab: "View payment receipts",
-        link: "/view-payment-receipt",
+        subtab: 'View payment receipts',
+        link: '/view-payment-receipt',
       },
       {
-        subtab: "Dispute payment list",
-        link: "/dispute-payment",
-        tabstyle: "pb-4",
+        subtab: 'Dispute payment list',
+        link: '/dispute-payment',
+        tabstyle: 'pb-4',
       },
     ],
 
-    subtabIconup: <HiChevronUp style={{ height: "20px", width: "20px" }} />,
-    subtabIcondown: <HiChevronDown style={{ height: "20px", width: "20px" }} />,
+    subtabIconup: <HiChevronUp style={{ height: '20px', width: '20px' }} />,
+    subtabIcondown: <HiChevronDown style={{ height: '20px', width: '20px' }} />,
   },
   {
     id: 5,
-    title: "Result",
-    icon: <VscNotebookTemplate className="h-[20px] w-[20px]" />,
+    title: 'Results',
+    icon: <VscNotebookTemplate className='h-[20px] w-[20px]' />,
     inactive: false,
-    link: "/check-result",
+    link: '/check-result',
   },
   {
     id: 6,
-    title: "Setting",
-    icon: <RiSettings4Line style={{ height: "20px", width: "20px" }} />,
+    title: 'Settings',
+    icon: <RiSettings4Line style={{ height: '20px', width: '20px' }} />,
     inactive: false,
-    link: "/settings",
+    link: '/settings',
   },
 ];
 export const CacheEnums = {
-  ACCESS_TOKEN: "access_Token",
-  USER_DATA: "user-data",
-  CACHE_BILLERS: "CACHE_BILLERS",
-  CACHE_BILLER_CATEGORIES: "CACHE_BILLER_CATEGORIES",
-  CACHE_POPULAR_BILLERS: "CACHE_POPULAR_BILLERS",
-  CACHE_AIRPORTS: "CACHE_AIRPORTS",
-  CACHE_AIRLINES: "CACHE_AIRLINES",
-  SESSION_FLIGHT_SEARCH: "SESSION_FLIGHT_SEARCH",
-  SESSION_SELECTED_FLIGHT: "SESSION_SELECTED_FLIGHT",
-  SESSION_REFERENCE_CACHE: "SESSION_REFERENCE_CACHE",
-  RECURRING_TRANSACTION: "RECURRING_TRANSACTION",
-  SAVED_BENEFICIARY: "SAVED_BENEFICIARY",
+  ACCESS_TOKEN: 'access_Token',
+  USER_DATA: 'user-data',
+  CACHE_BILLERS: 'CACHE_BILLERS',
+  CACHE_BILLER_CATEGORIES: 'CACHE_BILLER_CATEGORIES',
+  CACHE_POPULAR_BILLERS: 'CACHE_POPULAR_BILLERS',
+  CACHE_AIRPORTS: 'CACHE_AIRPORTS',
+  CACHE_AIRLINES: 'CACHE_AIRLINES',
+  SESSION_FLIGHT_SEARCH: 'SESSION_FLIGHT_SEARCH',
+  SESSION_SELECTED_FLIGHT: 'SESSION_SELECTED_FLIGHT',
+  SESSION_REFERENCE_CACHE: 'SESSION_REFERENCE_CACHE',
+  RECURRING_TRANSACTION: 'RECURRING_TRANSACTION',
+  SAVED_BENEFICIARY: 'SAVED_BENEFICIARY',
   // USER_DETAILS = 'USER_DETAILS',
-  LAST_LOGIN: "LAST_LOGIN",
+  LAST_LOGIN: 'LAST_LOGIN',
 };
