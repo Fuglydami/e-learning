@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../../context/globalContext';
 import { activeStyle, activeStyleSubmenu } from '../../shared/shared';
-
+import Dot from '../../asssets/icons/Dot.png';
 const Tab = ({ item }) => {
   const { setShowSidebar } = useGlobalContext();
   const [isOpen, setIsOpen] = useState(false);
@@ -46,16 +46,32 @@ const Tab = ({ item }) => {
         <div className={`cursor-pointer bg-customWhite`}>
           {item.subtab.map((i, index) => {
             const key = `${i.subtab}-${index}`;
+            console.log(item, 'item');
             return (
-              <NavLink
-                key={key}
-                to={i.link}
-                style={location.pathname === i.link ? activeStyleSubmenu : null}
-                onClick={() => setShowSidebar(false)}
-                className='nav-sub-link text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4'
-              >
-                <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
-              </NavLink>
+              <>
+                {item.title === 'Payments Panel' ? (
+                  <li
+                    className={`pt-3 nav-sub-link  text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4 ${i.tabstyle}`}
+                  >
+                    <a target='_blank' without rel='noreferrer' href={i.link}>
+                      &#x2022; &nbsp; &nbsp;
+                      {i.subtab}
+                    </a>
+                  </li>
+                ) : (
+                  <NavLink
+                    key={key}
+                    to={i.link}
+                    style={
+                      location.pathname === i.link ? activeStyleSubmenu : null
+                    }
+                    onClick={() => setShowSidebar(false)}
+                    className='nav-sub-link text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4'
+                  >
+                    <li className={`mt-3 ${i.tabstyle}`}>{i.subtab}</li>
+                  </NavLink>
+                )}
+              </>
             );
           })}
         </div>

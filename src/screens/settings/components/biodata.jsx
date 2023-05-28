@@ -1,45 +1,67 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { active, restofstyle } from "../../../shared/shared";
+import { active, restofstyle } from '../../../shared/shared';
+import { getJsonItemFromLocalStorage } from '../../../shared/helper-functions/save-data';
 
 const Biodata = () => {
-  const details = [
-    { title: "Full name", desc: "Titilope Ayodele" },
-    { title: "Matric No", desc: "19000473" },
-    { title: "Programme", desc: "B.Sc. Political Science" },
-    { title: "Level", desc: "200" },
-    { title: "Session", desc: "2022/2023" },
-    { title: "Faculty", desc: "Social Science" },
-    { title: "Department", desc: "Political Science" },
-    { title: "Sex", desc: "Female" },
-    { title: "Email", desc: "titiayodele@gmail.com" },
-    { title: "Phone No", desc: "09090112242" },
-    {
-      title: "Home Address",
-      desc: "14, taye-solarin street, off total fueling station, Ikeja, Lagos",
-    },
-    { title: "Mode of Entry", desc: "UTME" },
-    { title: "Student Status", desc: "Returning Student" },
-    { title: "Date of Birth", desc: "11-02-1996" },
-    { title: "State of Origin", desc: "Lagos State" },
-    { title: "L.G.A", desc: "Amuwo-odofin" },
-  ];
-  const guardianDetails = [
-    { title: "Full name", desc: "Ayodele Shola" },
+  const userDetails = getJsonItemFromLocalStorage('user-details');
+  const {
+    fullName,
+    address,
+    department,
+    email,
+    faculty,
+    gender,
+    level,
+    matricNo,
+    phoneNumber,
+    programme,
+    dob,
+    lga,
+    nxtFullName,
+    stateOfOrigin,
+    nxtPhoneNo,
+    nxtRelationship,
+    nxtEmail,
+  } = userDetails;
 
-    { title: "Sex", desc: "Male" },
-    { title: "Email", desc: "omoayodele@gmail.com" },
-    { title: "Phone No", desc: "09090113251" },
+  const details = [
+    { title: 'Full name', desc: fullName },
+    { title: 'Matric No', desc: matricNo },
+    { title: 'Programme', desc: programme },
+    { title: 'Level', desc: level },
+    // { title: 'Session', desc: '2022/2023' },
+    { title: 'Faculty', desc: faculty },
+    { title: 'Department', desc: department },
+    { title: 'Sex', desc: gender },
+    { title: 'Email', desc: email },
+    { title: 'Phone No', desc: phoneNumber },
     {
-      title: "Home Address",
-      desc: "14, taye-solarin street, off total fueling station, Ikeja, Lagos",
+      title: 'Home Address',
+      desc: address,
     },
+    // { title: 'Mode of Entry', desc: 'UTME' },
+    // { title: 'Student Status', desc: 'Returning Student' },
+    { title: 'Date of Birth', desc: dob },
+    { title: 'State of Origin', desc: stateOfOrigin },
+    { title: 'L.G.A', desc: lga },
+  ];
+  const nextOfKinDetails = [
+    { title: 'Full name', desc: nxtFullName },
+
+    { title: 'Relationship', desc: nxtRelationship },
+    { title: 'Phone No', desc: nxtPhoneNo },
+    { title: 'Email', desc: nxtEmail },
+    // {
+    //   title: 'Home Address',
+    //   desc: '14, taye-solarin street, off total fueling station, Ikeja, Lagos',
+    // },
   ];
   const [openTab, setOpenTab] = useState(1);
   return (
-    <div className="flex flex-col mt-6 justify-center ">
-      <div className=" md:w-[300px]  w-full border-extraLightGrey border-b mb-8">
-        <ul className="flex   flex-wrap  lg:text-base whitespace-nowrap space-x-2 ">
+    <div className='flex flex-col mt-6 justify-center '>
+      <div className=' md:w-[300px]  w-full border-extraLightGrey border-b mb-8'>
+        <ul className='flex   flex-wrap  lg:text-base whitespace-nowrap space-x-2 '>
           <li
             onClick={() => {
               setOpenTab(1);
@@ -54,33 +76,33 @@ const Biodata = () => {
             }}
             className={` ${openTab === 2 && active} ${restofstyle}`}
           >
-            Guardian Details
+            Next of Kin Details
           </li>
         </ul>
       </div>
-      <div className="w-full ">
-        <div className={openTab === 1 ? "block" : "hidden"}>
+      <div className='w-full '>
+        <div className={openTab === 1 ? 'block' : 'hidden'}>
           {details.map((item) => {
             return (
               <div
                 key={item.title}
-                className="grid font-[600] grid-cols-4 md:gap-0  md:pb-8 pb-5"
+                className='grid font-[600] grid-cols-4 md:gap-0  md:pb-8 pb-5'
               >
-                <p className="text-lightGrey ">{item.title}</p>
-                <p className="col-span-3 md:ml-0 ml-12">{item.desc}</p>
+                <p className='text-lightGrey '>{item.title}</p>
+                <p className='col-span-3 md:ml-0 ml-12'>{item.desc}</p>
               </div>
             );
           })}
         </div>
-        <div className={openTab === 2 ? "block" : "hidden"}>
-          {guardianDetails.map((item) => {
+        <div className={openTab === 2 ? 'block' : 'hidden'}>
+          {nextOfKinDetails.map((item) => {
             return (
               <div
                 key={item.title}
-                className="grid font-[600] grid-cols-4 md:pb-8 pb-5"
+                className='grid font-[600] grid-cols-4 md:pb-8 pb-5'
               >
-                <p className="text-lightGrey">{item.title}</p>
-                <p className="col-span-3 md:ml-0 ml-12">{item.desc}</p>
+                <p className='text-lightGrey'>{item.title}</p>
+                <p className='col-span-3 md:ml-0 ml-12'>{item.desc}</p>
               </div>
             );
           })}

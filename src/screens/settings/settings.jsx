@@ -8,8 +8,12 @@ import HelpCenter from './components/helpCenter';
 import Notification from './components/notification';
 import Security from './components/security';
 import ShowCGPA from './components/showCGPA';
+import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
+import { RxAvatar } from 'react-icons/rx';
 
 const Settings = () => {
+  const userDetails = getJsonItemFromLocalStorage('user-details');
+  const { fullName, profilePicture, level, matricNo } = userDetails;
   const active = 'my-auto  bg-sidebarOrange text-base_range';
   const restofstyle =
     'my-auto inline-block px-4 py-2   cursor-pointer text-lightGrey';
@@ -25,24 +29,28 @@ const Settings = () => {
           <article className='bg-[#FBFBFB] h-[272px] rounded-lg  '>
             <div className='mx-auto w-4/5 mt-7'>
               <div className='flex items-center justify-center '>
-                <img
-                  className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
-                  src={Avatar}
-                  alt='avatar'
-                  loading='lazy'
-                />
+                {profilePicture ? (
+                  <img
+                    className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
+                    src={profilePicture}
+                    alt='avatar'
+                    loading='lazy'
+                  />
+                ) : (
+                  <RxAvatar className='md:h-[96px] md:w-[96px] h-[70px] text-lightGrey w-[70px]' />
+                )}
               </div>
               <p className='text-[24px] font-[600] my-3 text-center'>
-                Titilope Ayodele
+                {fullName}
               </p>
               <div className='space-y-3'>
                 <div className='flex justify-between font-[600]'>
                   <p className='text-lightGrey'>Matric No:</p>
-                  <p>19000473</p>
+                  <p>{matricNo}</p>
                 </div>
                 <div className='flex justify-between font-[600]'>
                   <p className='text-lightGrey'>Current Level:</p>
-                  <p>200 Level</p>
+                  <p>{level}</p>
                 </div>
               </div>
             </div>

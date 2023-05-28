@@ -11,29 +11,24 @@ import {
   CustomTextInput,
 } from '../../shared/custom-input';
 import { saveJsonItemToLocalStorage } from '../../shared/helper-functions/save-data';
-import { ModalWrapper } from '../../shared/modal-wrapper';
+
 import { toastData } from '../../shared/shared';
 import ForgetPasword from '../reset-password/forget-pasword';
 import ResetPasword from '../reset-password/reset-password';
 import { Success } from '../reset-password/response';
 import VerifyPasword from '../reset-password/verify-password';
+import useModal from '../../hooks/modalCustomHook';
 
 export const LoginForm = () => {
   const { loading, setLoading } = useGlobalContext();
+  // const { isOpen, openModal, closeModal } = useModal();
+  const { ModalWrapper, openModal, closeModal } = useModal();
   let navigate = useNavigate();
 
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
 
   const [toggleModal, setToggleModal] = useState('');
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -106,7 +101,7 @@ export const LoginForm = () => {
           </form>
         </div>
       </div>
-      <ModalWrapper isOpen={isOpen} closeModal={closeModal}>
+      <ModalWrapper>
         {toggleModal === 'forget-password' ? (
           <ForgetPasword
             value={value}

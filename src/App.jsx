@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Protected from './routes/routes';
-
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingScreen from './screens/loading-screen';
@@ -62,6 +61,7 @@ function App() {
         pauseOnHover
         theme='light'
       />
+
       <Suspense fallback={<LoadingScreen />}>
         <Routes>
           <Route element={<Protected />}>

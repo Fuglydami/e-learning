@@ -7,7 +7,27 @@ import { VscNotebookTemplate } from 'react-icons/vsc';
 import Onboarding1 from '../asssets/images/Onboarding 1.gif';
 import Onboarding2 from '../asssets/images/Onboarding 2.gif';
 import Onboarding3 from '../asssets/images/Onboarding 3.gif';
-
+import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
+const userDetails = getJsonItemFromLocalStorage('user-details');
+const {
+  fullName,
+  address,
+  department,
+  email,
+  faculty,
+  gender,
+  level,
+  matricNo,
+  phoneNumber,
+  programme,
+  dob,
+  lga,
+  nxtFullName,
+  stateOfOrigin,
+  nxtPhoneNo,
+  nxtRelationship,
+  nxtEmail,
+} = userDetails;
 export const items = [
   {
     id: 1,
@@ -149,20 +169,33 @@ export const navItem = [
   },
   {
     id: 4,
-    title: 'Payments',
+    title: 'Payments Panel',
     icon: <IoReceiptOutline className='h-[20px] w-[20px]' />,
     inactive: false,
 
     subtab: [
       {
-        subtab: 'View payment receipts',
-        link: '/view-payment-receipt',
+        subtab: 'My Payments',
+        link: `https://lodlc.lautech.edu.ng/pay/#/payments/${matricNo}/${level}`,
       },
       {
-        subtab: 'Dispute payment list',
-        link: '/dispute-payment',
+        subtab: 'Technology Fee',
+        link: `https://lodlc.lautech.edu.ng/pay/#/techfee/${matricNo}`,
+      },
+      {
+        subtab: 'Payments History',
+        link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/${matricNo}`,
         tabstyle: 'pb-4',
       },
+      // {
+      //   subtab: 'View payment receipts',
+      //   link: '/view-payment-receipt',
+      // },
+      // {
+      //   subtab: 'Dispute payment list',
+      //   link: '/dispute-payment',
+      //   tabstyle: 'pb-4',
+      // },
     ],
 
     subtabIconup: <HiChevronUp style={{ height: '20px', width: '20px' }} />,

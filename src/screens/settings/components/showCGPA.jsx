@@ -3,12 +3,14 @@ import { toast } from 'react-toastify';
 import { useGlobalContext } from '../../../context/globalContext';
 import CustomButton from '../../../shared/custom-button';
 import { CustomPasswordInput } from '../../../shared/custom-input';
-import { ModalWrapper } from '../../../shared/modal-wrapper';
+
+import useModal from '../../../hooks/modalCustomHook';
 
 const ShowCGPA = ({ setOpenTab, openTab }) => {
   const [password, setPassword] = useState('');
-  const { openModal, loading, error, isModalOpen, closeModal, show, setShow } =
-    useGlobalContext();
+
+  const { ModalWrapper, openModal, closeModal } = useModal();
+  const { show, setShow } = useGlobalContext();
   useEffect(() => {
     if (openTab === 3) {
       setShow(false);
@@ -35,13 +37,7 @@ const ShowCGPA = ({ setOpenTab, openTab }) => {
           </div>
         </div>
       )}
-      <ModalWrapper
-        isOpen={isModalOpen}
-        closeModal={() => {
-          closeModal();
-          setOpenTab(2);
-        }}
-      >
+      <ModalWrapper>
         <div className='flex flex-col text-center lg:w-[450px] w-full mx-auto items-center justify-center space-y-4 mb-6'>
           <h2 className='text-3xl w-[390px] md:text-4xl font-bold'>
             Show CGPA

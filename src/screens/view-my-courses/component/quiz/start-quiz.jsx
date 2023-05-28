@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Verify from '../../../../asssets/icons/verify.svg';
 import { useGlobalContext } from '../../../../context/globalContext';
 import CustomButton from '../../../../shared/custom-button';
-import { ModalWrapper } from '../../../../shared/modal-wrapper';
+
 import { Success } from '../../../reset-password/response';
+import useModal from '../../../../hooks/modalCustomHook';
 
 const StartQuiz = () => {
-  const { openModal, loading, error, isModalOpen, closeModal, show, setShow } =
-    useGlobalContext();
+  const { loading, error, isModalOpen, show, setShow } = useGlobalContext();
+
+  const { ModalWrapper, openModal, closeModal } = useModal();
   const [checkCorrectAnswer, setCheckCorrectAnswer] = useState(false);
   const questions = [
     {
@@ -215,13 +217,7 @@ const StartQuiz = () => {
         onClick={() => openModal()}
       />
 
-      <ModalWrapper
-        isOpen={isModalOpen}
-        closeModal={() => {
-          setSuccess(false);
-          closeModal();
-        }}
-      >
+      <ModalWrapper>
         {success ? (
           <Success
             title={'Quiz Submitted.'}
