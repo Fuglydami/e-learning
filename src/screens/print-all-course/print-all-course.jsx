@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { MdDownload } from 'react-icons/md';
 import { RiPrinterLine } from 'react-icons/ri';
@@ -6,8 +6,33 @@ import { useNavigate } from 'react-router-dom';
 import { Container, MainContainer, Title } from '../../misc/component-wrapper';
 import { customStyles } from '../../misc/data';
 import CustomButton from '../../shared/custom-button';
+import { gethttp } from '../../services/actions';
+import { GET_REGISTERED_COURSES } from '../../services/api-url';
+import StudentDetails from './student-details';
 
 const PrintAllCourse = () => {
+  const [getCourses, setGetCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const getRegistrableCourses = async () => {
+    setIsLoading(true);
+    const { data } = await gethttp(GET_REGISTERED_COURSES);
+
+    if (data && data.isSuccessful === true) {
+      const newData = data.data.map((item, index) => ({
+        ...item,
+        id: index + 1,
+      }));
+      setGetCourses(newData);
+      setIsLoading(false);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getRegistrableCourses();
+  }, []);
   let navigate = useNavigate();
   const data = [
     {
@@ -43,68 +68,69 @@ const PrintAllCourse = () => {
       exports: true,
     },
     {
-      name: 'Level',
-      selector: (row) => row.level,
+      name: 'Course Code',
+      selector: (row) => row.courseCode,
       sortable: true,
       exports: true,
     },
     {
-      name: 'Academic Session',
-      selector: (row) => row.academicSession,
+      name: 'Course Title',
+      selector: (row) => row.courseTitle,
       sortable: true,
-
+      grow: 3,
       exports: true,
     },
     {
-      name: 'Description',
-      selector: (row) => row.description,
+      name: 'Unit',
+      selector: (row) => row.unit,
       sortable: true,
-      grow: 2,
       exports: true,
-    },
-
-    {
-      name: 'Action',
-      cell: (row) => (
-        <div className='flex  md:gap-3 gap-6'>
-          <div className='text-base_range items-center cursor-pointer flex gap-1'>
-            <RiPrinterLine />
-            <p className='hidden md:flex'>Print</p>
-          </div>
-          <div className='text-base_range items-center cursor-pointer flex gap-1'>
-            <MdDownload />
-            <p className='hidden md:flex'>Download</p>
-          </div>
-        </div>
-      ),
       center: true,
     },
+
+    // {
+    //   name: 'Action',
+    //   cell: (row) => (
+    //     <div className='flex  md:gap-3 gap-6'>
+    //       <div className='text-base_range items-center cursor-pointer flex gap-1'>
+    //         <RiPrinterLine />
+    //         <p className='hidden md:flex'>Print</p>
+    //       </div>
+    //       <div className='text-base_range items-center cursor-pointer flex gap-1'>
+    //         <MdDownload />
+    //         <p className='hidden md:flex'>Download</p>
+    //       </div>
+    //     </div>
+    //   ),
+    //   center: true,
+    // },
   ];
   return (
     <MainContainer>
       <Container>
-        <Title title={'Course Forms'}>
+        <Title title={'Course Form'}>
           <CustomButton
             buttonStyle={'bg-base_range white text-[14px]'}
-            title={'Create Payment Dispute'}
+            title={'Print Course Form'}
             borderRadius={'8px'}
             onClick={() => {
               navigate('/dispute-payment/create-dispute');
             }}
           />
         </Title>
-        <div className='font-[700] px-7 md:my-10 my-5 py-5 bg-base_range white'>
-          List of Payment Receipts
+        <StudentDetails />
+        <div className='font-[700] px-7  my-5 py-5 bg-base_range white'>
+          List of Registered Courses
         </div>
         <div className='mb-10'>
           <DataTable
             responsive={true}
             columns={columns}
-            data={data}
+            data={getCourses}
             customStyles={customStyles}
+            progressPending={isLoading}
             // pagination
             highlightOnHover
-            // progressPending={loading}
           />
         </div>
       </Container>

@@ -73,13 +73,13 @@ export const LoginForm = () => {
               label={'Username or Matric No'}
               value={value}
               textColor={'mb-3'}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e) => setValue(e.target.value.trim())}
               placeholder={'Nou13346999'}
             />
             <CustomPasswordInput
               label={'Password'}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value.trim())}
               placeholder={'damilare123'}
             />
 

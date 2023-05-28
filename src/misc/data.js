@@ -4,30 +4,12 @@ import { IoReceiptOutline } from 'react-icons/io5';
 import { RiSettings4Line } from 'react-icons/ri';
 import { TbNotes, TbSmartHome } from 'react-icons/tb';
 import { VscNotebookTemplate } from 'react-icons/vsc';
-import Onboarding1 from '../asssets/images/Onboarding 1.gif';
-import Onboarding2 from '../asssets/images/Onboarding 2.gif';
-import Onboarding3 from '../asssets/images/Onboarding 3.gif';
+import Onboarding1 from '../asssets/images/onboarding1.jpg';
+import Onboarding2 from '../asssets/images/onboarding2.jpg';
+import Onboarding3 from '../asssets/images/onboarding3.jpg';
 import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
-const userDetails = getJsonItemFromLocalStorage('user-details');
-const {
-  fullName,
-  address,
-  department,
-  email,
-  faculty,
-  gender,
-  level,
-  matricNo,
-  phoneNumber,
-  programme,
-  dob,
-  lga,
-  nxtFullName,
-  stateOfOrigin,
-  nxtPhoneNo,
-  nxtRelationship,
-  nxtEmail,
-} = userDetails;
+let userDetails = getJsonItemFromLocalStorage('user-details');
+console.log(userDetails, 'heello');
 export const items = [
   {
     id: 1,
@@ -176,15 +158,15 @@ export const navItem = [
     subtab: [
       {
         subtab: 'My Payments',
-        link: `https://lodlc.lautech.edu.ng/pay/#/payments/${matricNo}/${level}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/payments/${userDetails?.matricNo}/${userDetails?.level}`,
       },
       {
         subtab: 'Technology Fee',
-        link: `https://lodlc.lautech.edu.ng/pay/#/techfee/${matricNo}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/techfee/${userDetails?.matricNo}`,
       },
       {
         subtab: 'Payments History',
-        link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/${matricNo}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/${userDetails?.matricNo}`,
         tabstyle: 'pb-4',
       },
       // {

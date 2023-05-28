@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Avatar from '../../asssets/images/avatar.svg';
+import Avatar from '../../asssets/icons/avatar-img.jpg';
 import { useGlobalContext } from '../../context/globalContext';
 import { Container, MainContainer, Title } from '../../misc/component-wrapper';
 
@@ -10,6 +10,7 @@ import Security from './components/security';
 import ShowCGPA from './components/showCGPA';
 import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
 import { RxAvatar } from 'react-icons/rx';
+import ResetPassword from './components/resetPassword';
 
 const Settings = () => {
   const userDetails = getJsonItemFromLocalStorage('user-details');
@@ -37,7 +38,12 @@ const Settings = () => {
                     loading='lazy'
                   />
                 ) : (
-                  <RxAvatar className='md:h-[96px] md:w-[96px] h-[70px] text-lightGrey w-[70px]' />
+                  <img
+                    className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
+                    src={Avatar}
+                    alt='avatar'
+                    loading='lazy'
+                  />
                 )}
               </div>
               <p className='text-[24px] font-[600] my-3 text-center'>
@@ -69,40 +75,49 @@ const Settings = () => {
                     Biodata
                   </li>
                   <li
-                    onClick={() => {
-                      setOpenTab(2);
-                      setShow(false);
-                    }}
+                    // onClick={() => {
+                    //   setOpenTab(2);
+                    //   setShow(false);
+                    // }}
                     className={` ${openTab === 2 && active} ${restofstyle}`}
                   >
                     Notification
                   </li>
                   <li
-                    onClick={() => {
-                      setOpenTab(3);
-                      setShow(false);
-                    }}
+                    // onClick={() => {
+                    //   setOpenTab(3);
+                    //   setShow(false);
+                    // }}
                     className={` ${openTab === 3 && active} ${restofstyle}`}
                   >
                     Show CGPA
                   </li>
                   <li
-                    onClick={() => {
-                      setOpenTab(4);
-                      setShow(false);
-                    }}
+                    // onClick={() => {
+                    //   setOpenTab(4);
+                    //   setShow(false);
+                    // }}
                     className={` ${openTab === 4 && active} ${restofstyle}`}
                   >
                     Security
                   </li>
                   <li
-                    onClick={() => {
-                      setOpenTab(5);
-                      setShow(false);
-                    }}
+                    // onClick={() => {
+                    //   setOpenTab(5);
+                    //   setShow(false);
+                    // }}
                     className={` ${openTab === 5 && active} ${restofstyle}`}
                   >
                     Help Center
+                  </li>
+                  <li
+                    onClick={() => {
+                      setOpenTab(6);
+                      setShow(false);
+                    }}
+                    className={` ${openTab === 6 && active} ${restofstyle}`}
+                  >
+                    Change Password
                   </li>
                 </ul>
               </div>
@@ -121,6 +136,9 @@ const Settings = () => {
                 </div>
                 <div className={openTab === 5 ? 'block' : 'hidden'}>
                   <HelpCenter />
+                </div>
+                <div className={openTab === 6 ? 'block' : 'hidden'}>
+                  <ResetPassword />
                 </div>
               </div>
             </div>

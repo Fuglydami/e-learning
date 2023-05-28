@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
-import { active, restofstyle } from '../../../shared/shared';
+import { active, restofstyle, toastData } from '../../../shared/shared';
 import { getJsonItemFromLocalStorage } from '../../../shared/helper-functions/save-data';
+import { CustomPasswordInput } from '../../../shared/custom-input';
+import CustomButton from '../../../shared/custom-button';
+import { posthttp } from '../../../services/actions';
+import { toast } from 'react-toastify';
+import { RESET_PASSWORD } from '../../../services/api-url';
 
 const Biodata = () => {
   const userDetails = getJsonItemFromLocalStorage('user-details');

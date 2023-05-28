@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
 
 export const httpAuth = () => {
   const baseURL = 'https://portalsvr.proleanfinancials.biz/api/';
@@ -10,7 +11,7 @@ export const httpAuth = () => {
   // instance.defaults.headers.common["countryCode"] = CountryCode;
   // instance.defaults.headers.common["language"] = lang;
   // instance.defaults.headers.common["version"] = version;
-  // instance.defaults.headers.common["token"] = token;
+  // instance.defaults.headers.common['token'] = token;
   // const intersectedInstance = instance.interceptors.request.use(
   //   (response) => {
   //     return response;

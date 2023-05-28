@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 
 import { CgMenuRight } from 'react-icons/cg';
 import NotificationIcon from '../../asssets/icons/notification.svg';
-import Avatar from '../../asssets/images/avatar.svg';
+import Avatar from '../../asssets/icons/avatar-img.jpg';
 import Wave from '../../asssets/images/wave.svg';
 import { useGlobalContext } from '../../context/globalContext';
 import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const userDetails = getJsonItemFromLocalStorage('user-details');
 
-  const { fullName } = userDetails;
+  const { fullName, profilePicture, session } = userDetails;
 
   const notificationData = [
     {
@@ -107,15 +107,23 @@ const Navbar = () => {
 
           <div className='flex  justify-center space-x-5'>
             <p className='font-[500] flex items-center text-[14px]'>
-              2022/2023 Harmattan Sem...
+              {session}
             </p>
-            <img
-              className='h-[40px] w-[40px] flex'
-              src={Avatar}
-              loading='lazy'
-              alt='message'
-            />
-
+            {profilePicture ? (
+              <img
+                className='h-[40px] w-[40px] flex'
+                src={profilePicture}
+                alt='avatar'
+                loading='lazy'
+              />
+            ) : (
+              <img
+                className='h-[40px] w-[40px] flex'
+                src={Avatar}
+                loading='lazy'
+                alt='message'
+              />
+            )}
             <div className='leading-[20px]'>
               <p className='font-[600] text-[14px]'>{fullName}</p>
               <p className=' font-[600] text-[14px] text-[#525354]'>19000473</p>

@@ -6,8 +6,12 @@ import { SectionContainer } from '../../misc/component-wrapper';
 import ClassList from './classList';
 // import NoCourse from "./noCourse";
 import OnGoingCourse from './onGoingCourse';
+import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
 
 const DashboardScreen = () => {
+  const userDetails = getJsonItemFromLocalStorage('user-details');
+
+  const { notification } = userDetails;
   const skeleton = ' animate-pulse bg-gray-200 dark:bg-gray-700 ';
   return (
     <div
@@ -20,9 +24,7 @@ const DashboardScreen = () => {
               Announcements!!!
             </h1>
             <p className='font-normal white  leading-tight lg:leading-6'>
-              This 2022/2023 Harmattan Course registration closes on or before
-              29th of April 2022. An extra fee will be attracted after the
-              closing date for late registration.
+              {notification}
             </p>
             <button className='px-6 rounded-md py-2 bg-[#FFDB8D] outline-none border-none'>
               <Link to={'/register-course'}>Click to Register</Link>
