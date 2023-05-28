@@ -65,16 +65,16 @@ export const LoginForm = () => {
           <div className='flex flex-col space-y-4 mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold'>Login</h2>
             <p className='text-lightGrey text-md md:text-xl text-green-100'>
-              Login to access lectures and account informations
+              Login to access lectures and account information
             </p>
           </div>
           <form>
             <CustomTextInput
-              label={'Username or Matric No'}
+              label={'Matric No'}
               value={value}
               textColor={'mb-3'}
               onChange={(e) => setValue(e.target.value.trim())}
-              placeholder={'Nou13346999'}
+              placeholder={'Lodlc123456'}
             />
             <CustomPasswordInput
               label={'Password'}
