@@ -1,11 +1,17 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 import Protected from './routes/routes';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingScreen from './screens/loading-screen';
+import {
+  clearLocalStorage,
+  getJsonItemFromLocalStorage,
+} from './shared/helper-functions/save-data';
+import { toastData } from './shared/shared';
+import useLogoutTimer from './hooks/expiringTimeout';
 const SaveNotes = lazy(() => import('./screens/view-save-notes.js/save-notes'));
 const ViewRegisterCourse = lazy(() =>
   import('./screens/view-register-courses/view-register-course')
@@ -47,6 +53,15 @@ const ClassSchedule = lazy(() =>
 );
 
 function App() {
+  const tokenDetails = getJsonItemFromLocalStorage('token-details');
+  const expiringTime = tokenDetails?.expiryTime;
+
+  const logoutCallback = () => {
+    clearLocalStorage();
+    window.location.href = '/';
+    toast.error('Session timeout', toastData);
+  };
+  useLogoutTimer(expiringTime, logoutCallback);
   return (
     <>
       <ToastContainer

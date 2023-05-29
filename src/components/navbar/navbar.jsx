@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const userDetails = getJsonItemFromLocalStorage('user-details');
 
-  const { fullName, profilePicture, session } = userDetails;
+  const { fullName, profilePicture, session, matricNo } = userDetails;
 
   const notificationData = [
     {
@@ -126,7 +126,9 @@ const Navbar = () => {
             )}
             <div className='leading-[20px]'>
               <p className='font-[600] text-[14px]'>{fullName}</p>
-              <p className=' font-[600] text-[14px] text-[#525354]'>19000473</p>
+              <p className=' font-[600] text-[14px] text-[#525354]'>
+                {matricNo}
+              </p>
             </div>
           </div>
         </div>

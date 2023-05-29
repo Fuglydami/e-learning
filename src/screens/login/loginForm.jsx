@@ -84,10 +84,10 @@ export const LoginForm = () => {
             />
 
             <p
-              onClick={() => {
-                openModal();
-                setToggleModal('forget-password');
-              }}
+              // onClick={() => {
+              //   openModal();
+              //   setToggleModal('forget-password');
+              // }}
               className='font-semibold text-base_range  float-right mb-20 cursor-pointer'
             >
               Forgot Password?

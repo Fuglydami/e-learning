@@ -11,7 +11,7 @@ const StudentDetails = () => {
   return (
     <section className='  lg:mb-10 mb-4'>
       <div className='lg:p-6 space-y-2 p-4 bg-sidebarOrange rounded-md'>
-        <h1 className='font-bold text-xl mb-3'>NOTE</h1>
+        <h1 className='font-bold text-xl mb-3'>Student Details</h1>
         <div className='flex gap-3 lg:flex-row flex-col mb-4 lg:mb-0'>
           <div className={columnClass}>
             Name:

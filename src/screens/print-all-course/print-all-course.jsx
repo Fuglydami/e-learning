@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import DataTable from 'react-data-table-component';
 import { MdDownload } from 'react-icons/md';
 import { RiPrinterLine } from 'react-icons/ri';
@@ -9,6 +9,7 @@ import CustomButton from '../../shared/custom-button';
 import { gethttp } from '../../services/actions';
 import { GET_REGISTERED_COURSES } from '../../services/api-url';
 import StudentDetails from './student-details';
+import { useReactToPrint } from 'react-to-print';
 
 const PrintAllCourse = () => {
   const [getCourses, setGetCourses] = useState([]);
@@ -105,19 +106,11 @@ const PrintAllCourse = () => {
     //   center: true,
     // },
   ];
-  return (
-    <MainContainer>
-      <Container>
-        <Title title={'Course Form'}>
-          <CustomButton
-            buttonStyle={'bg-base_range white text-[14px]'}
-            title={'Print Course Form'}
-            borderRadius={'8px'}
-            onClick={() => {
-              navigate('/dispute-payment/create-dispute');
-            }}
-          />
-        </Title>
+
+  const componentRef = useRef();
+  const PrintContent = React.forwardRef((props, ref) => {
+    return (
+      <div ref={ref}>
         <StudentDetails />
         <div className='font-[700] px-7  my-5 py-5 bg-base_range white'>
           List of Registered Courses
@@ -133,6 +126,29 @@ const PrintAllCourse = () => {
             highlightOnHover
           />
         </div>
+      </div>
+    );
+  });
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+  return (
+    <MainContainer>
+      <Container>
+        <Title title={'Course Form'}>
+          <CustomButton
+            buttonStyle={'bg-base_range white text-[14px]'}
+            title={'Print Course Form'}
+            borderRadius={'8px'}
+            onClick={handlePrint}
+            // onClick={() => {
+            //   // navigate('/dispute-payment/create-dispute');
+            // }}
+          />
+        </Title>
+        <PrintContent ref={componentRef} />
       </Container>
     </MainContainer>
   );

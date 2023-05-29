@@ -9,7 +9,7 @@ import Onboarding2 from '../asssets/images/onboarding2.jpg';
 import Onboarding3 from '../asssets/images/onboarding3.jpg';
 import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
 let userDetails = getJsonItemFromLocalStorage('user-details');
-console.log(userDetails, 'heello');
+
 export const items = [
   {
     id: 1,
