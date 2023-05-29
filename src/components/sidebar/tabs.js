@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../../context/globalContext';
 import { activeStyle, activeStyleSubmenu } from '../../shared/shared';
-import Dot from '../../asssets/icons/Dot.png';
+import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
+
 const Tab = ({ item }) => {
+  let userDetails = getJsonItemFromLocalStorage('user-details');
   const { setShowSidebar } = useGlobalContext();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,6 +18,15 @@ const Tab = ({ item }) => {
     }
   };
 
+  const getLink = (title) => {
+    if (title === 'My Payments') {
+      return `${userDetails?.matricNo}/${userDetails?.level}`;
+    } else if (title === 'Technology Fee') {
+      return `${userDetails?.matricNo}`;
+    } else {
+      return `${userDetails?.matricNo}`;
+    }
+  };
   // const isActive =
   //   location.pathname.startsWith(item.link) ||
   //   (item.subtab &&
@@ -47,13 +58,19 @@ const Tab = ({ item }) => {
           {item.subtab.map((i, index) => {
             const key = `${i.subtab}-${index}`;
             console.log(item, 'item');
+
             return (
               <>
                 {item.title === 'Payments Panel' ? (
                   <li
                     className={`pt-3 nav-sub-link  text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4 ${i.tabstyle}`}
                   >
-                    <a target='_blank' without rel='noreferrer' href={i.link}>
+                    <a
+                      target='_blank'
+                      without
+                      rel='noreferrer'
+                      href={i.link + getLink(i.subtab)}
+                    >
                       &#x2022; &nbsp; &nbsp;
                       {i.subtab}
                     </a>

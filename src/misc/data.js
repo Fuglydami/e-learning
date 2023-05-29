@@ -7,8 +7,6 @@ import { VscNotebookTemplate } from 'react-icons/vsc';
 import Onboarding1 from '../asssets/images/onboarding1.jpg';
 import Onboarding2 from '../asssets/images/onboarding2.jpg';
 import Onboarding3 from '../asssets/images/onboarding3.jpg';
-import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
-let userDetails = getJsonItemFromLocalStorage('user-details');
 
 export const items = [
   {
@@ -158,15 +156,15 @@ export const navItem = [
     subtab: [
       {
         subtab: 'My Payments',
-        link: `https://lodlc.lautech.edu.ng/pay/#/payments/${userDetails?.matricNo}/${userDetails?.level}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/payments/`,
       },
       {
         subtab: 'Technology Fee',
-        link: `https://lodlc.lautech.edu.ng/pay/#/techfee/${userDetails?.matricNo}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/techfee/`,
       },
       {
         subtab: 'Payments History',
-        link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/${userDetails?.matricNo}`,
+        link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/`,
         tabstyle: 'pb-4',
       },
       // {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigate from '../../asssets/icons/navigate.svg';
 import Illustration from '../../asssets/images/Illustration.png';
