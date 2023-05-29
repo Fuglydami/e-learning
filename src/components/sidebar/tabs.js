@@ -57,7 +57,7 @@ const Tab = ({ item }) => {
         <div className={`cursor-pointer bg-customWhite`}>
           {item.subtab.map((i, index) => {
             const key = `${i.subtab}-${index}`;
-            console.log(item, 'item');
+            console.log(i, 'item');
 
             return (
               <>

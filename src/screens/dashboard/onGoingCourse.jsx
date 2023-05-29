@@ -8,9 +8,9 @@ const OnGoingCourse = () => {
   const courseData = [
     {
       id: 1,
-      code: 'POL 202:',
+      code: 'GST 111:',
       duration: 'now',
-      title: 'Introduction to Political Science',
+      title: 'Communication in English I',
       lecturer: 'Dr. Adegboola Oguniyi',
       unit: '3 units',
       time: '10:00am - 12:00pm',
@@ -18,9 +18,9 @@ const OnGoingCourse = () => {
     },
     {
       id: 2,
-      code: 'POL 205:',
+      code: 'GST 121:',
       duration: 'in 1 hour',
-      title: 'Community Mental Health Studies',
+      title: 'Use of Library, Study Skills and ICT',
       lecturer: 'Dr. Taiwo Olamiposi',
       unit: '2 units',
       time: '2:00pm - 4:00pm',
@@ -50,15 +50,18 @@ const OnGoingCourse = () => {
                         </span>
                       </div>
                       <h5 className='text-[#fff]  font-[600] mb-1'>{title}</h5>
-                      <span className='font-[400] text-[#fff1e788]'>
+                      {/* <span className='font-[400] text-[#fff1e788]'>
                         {lecturer} - {unit}
+                      </span> */}
+                      <span className='font-[400] text-[#fff1e788]'>
+                        {unit}
                       </span>
                     </div>
                   </div>
-                  <div className='text-sm text-[#fff] flex space-x-2 items-center mt-4'>
+                  {/* <div className='text-sm text-[#fff] flex space-x-2 items-center mt-4'>
                     <BiTimeFive />
                     <p>{time}</p>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className='flex items-center '>

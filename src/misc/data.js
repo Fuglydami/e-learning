@@ -130,15 +130,15 @@ export const navItem = [
     subtab: [
       {
         subtab: 'View my courses',
-        link: '/my-learning',
+        // link: '/my-learning',
       },
       {
         subtab: 'View saved notes',
-        link: '/save-notes',
+        // link: '/save-notes',
       },
       {
         subtab: 'View my class schedules',
-        link: '/class-schedule',
+        // link: '/class-schedule',
         tabstyle: 'pb-4',
       },
     ],
@@ -186,7 +186,7 @@ export const navItem = [
     title: 'Results',
     icon: <VscNotebookTemplate className='h-[20px] w-[20px]' />,
     inactive: false,
-    link: '/check-result',
+    // link: '/check-result',
   },
   {
     id: 6,
