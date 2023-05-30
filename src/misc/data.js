@@ -163,8 +163,22 @@ export const navItem = [
         link: `https://lodlc.lautech.edu.ng/pay/#/techfee/`,
       },
       {
+        subtab: 'Print Receipts',
+        link: `https://lodlc.lautech.edu.ng/pay/#/printreceipt/`,
+        
+      },
+      {
         subtab: 'Payments History',
         link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/`,
+        
+      },
+      {
+        subtab: 'Print Tech Fee Receipt',
+        // link: `/print-tech-fee-receipt`,
+      },
+      {
+        subtab: 'Refresh Tech Fee',
+        link: `https://lodlc.lautech.edu.ng/pay/#/paymentrefresh/`,
         tabstyle: 'pb-4',
       },
       // {
