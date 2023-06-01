@@ -5,7 +5,6 @@ import {
   clearLocalStorage,
   getJsonItemFromLocalStorage,
 } from '../shared/helper-functions/save-data';
-import { useHistory, useNavigate } from 'react-router-dom';
 
 const handleError = (error) => {
   // console.log(error.response.status, 'error in block');
@@ -46,15 +45,14 @@ export const posthttp = async (url, payload) => {
   }
 };
 
-export const gethttp = async (url, contentType,responseType) => {
+export const gethttp = async (url, contentType, responseType) => {
   const tokenDetails = getJsonItemFromLocalStorage('token-details');
 
-  const baseURL = httpAuth(contentType,responseType);
+  const baseURL = httpAuth(contentType, responseType);
   try {
     const data = await baseURL.get(
       url,
-      authorization(tokenDetails?.access_Token),
-      
+      authorization(tokenDetails?.access_Token)
     );
     return data;
   } catch (error) {

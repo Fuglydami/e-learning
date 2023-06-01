@@ -23,11 +23,11 @@ const Tab = ({ item }) => {
       return `${userDetails?.matricNo}/${userDetails?.level}`;
     } else if (title === 'Technology Fee') {
       return `${userDetails?.matricNo}`;
-    }else if(title === 'Print Receipts'){
+    } else if (title === 'Print Receipts') {
       return `${userDetails?.matricNo}`;
-    }else if(title === 'Refresh Tech Fee'){
+    } else if (title === 'Refresh Tech Fee') {
       return `${userDetails?.matricNo}`;
-    } else if(title ==="Payments History"){
+    } else if (title === 'Payments History') {
       return `${userDetails?.matricNo}`;
     }
   };
@@ -61,11 +61,12 @@ const Tab = ({ item }) => {
         <div className={`cursor-pointer bg-customWhite`}>
           {item.subtab.map((i, index) => {
             const key = `${i.subtab}-${index}`;
-            console.log(i, 'item');
+            console.log(item, 'item');
 
             return (
               <>
-                {item.title === 'Payments Panel' && item.subtab ==! "Print Tech Fee Receipt" ? (
+                {item.title === 'Payments Panel' &&
+                i.subtab !== 'Print Tech Fee Receipt' ? (
                   <li
                     className={`pt-3 nav-sub-link  text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4 ${i.tabstyle}`}
                   >
