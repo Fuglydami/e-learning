@@ -1,14 +1,19 @@
 import axios from 'axios';
-import { getJsonItemFromLocalStorage } from '../shared/helper-functions/save-data';
 
-export const httpAuth = () => {
+
+export const httpAuth = (contentType = 'application/json',responseType) => {
   const baseURL = 'https://portalsvr.proleanfinancials.biz/api/';
 
   const instance = axios.create({
     baseURL,
+    responseType: responseType === "download" ? 'arraybuffer' : '',
+    headers: {
+      accept:"application/json",
+      'Content-Type': contentType,
+    },
   });
 
-  // instance.defaults.headers.common["countryCode"] = CountryCode;
+  // instance.defaults.headers.common["content-type"] = contentType;
   // instance.defaults.headers.common["language"] = lang;
   // instance.defaults.headers.common["version"] = version;
   // instance.defaults.headers.common['token'] = token;

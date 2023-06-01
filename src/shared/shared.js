@@ -35,41 +35,16 @@ export const Spin = () => {
   );
 };
 
-export const printPage = () => {
-  let mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
-  mywindow.document.write(`
-    <html>
-      <head>
-        <title>Print Receipt</title>
-        <style>
-          @media print {
-            body {
-              -webkit-print-color-adjust: exact;
-              color-adjust: exact;
-            }
-            
-            /* Preserve color styles */
-            * {
-              -webkit-print-color-adjust: exact;
-              print-color-adjust: exact;
-            }
-          }
-        </style>
-      </head>
-      <body>
-        ${document.getElementById('print-receipt').innerHTML}
-      </body>
-    </html>
-  `);
 
-  mywindow.document.close();
-  mywindow.focus();
 
-  mywindow.print();
-  //mywindow.download();
-
-  return true;
+export function saveByteArray(reportName, byte) {
+  var blob = new Blob([byte], {type: "application/pdf"});
+  var link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  var fileName = reportName;
+  link.download = fileName;
+  link.click();
 };
 
 export const active = 'my-auto border-b-2 border-base_range text-base_range';

@@ -65,7 +65,7 @@ const Tab = ({ item }) => {
 
             return (
               <>
-                {item.title === 'Payments Panel' && item.subtab !== "Print Tech Fee Receipt" ? (
+                {item.title === 'Payments Panel' && item.subtab ==! "Print Tech Fee Receipt" ? (
                   <li
                     className={`pt-3 nav-sub-link  text-[14px] font-[400] flex mx-auto gap-[15px] space-y-4 space-x-2 text-[#525354] pl-4 ${i.tabstyle}`}
                   >

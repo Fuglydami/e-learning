@@ -51,6 +51,10 @@ const Dashboard = lazy(() => import('./screens/dashboard/home'));
 const ClassSchedule = lazy(() =>
   import('./screens/class-schedule/class-schedule')
 );
+const PaymentTechReceipt = lazy(() =>
+  import('./screens/payment-tech-receipt/payment-tech-receipt')
+);
+
 
 function App() {
   const tokenDetails = getJsonItemFromLocalStorage('token-details');
@@ -113,6 +117,7 @@ function App() {
             <Route path='/settings' element={<Settings />} />
             <Route path='/save-notes' element={<SaveNotes />} />
             <Route path='/print-all-course' element={<PrintAllCourse />} />
+            <Route path="/print-tech-fee-receipt" element={<PaymentTechReceipt/>}/>
           </Route>
           <Route exact path='/' element={<LoginScreen />} />
           <Route path='*' element={<ErrorPage />} />

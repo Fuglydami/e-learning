@@ -46,15 +46,15 @@ export const posthttp = async (url, payload) => {
   }
 };
 
-export const gethttp = async (url) => {
+export const gethttp = async (url, contentType,responseType) => {
   const tokenDetails = getJsonItemFromLocalStorage('token-details');
 
-  const baseURL = httpAuth();
+  const baseURL = httpAuth(contentType,responseType);
   try {
     const data = await baseURL.get(
       url,
-
-      authorization(tokenDetails?.access_Token)
+      authorization(tokenDetails?.access_Token),
+      
     );
     return data;
   } catch (error) {

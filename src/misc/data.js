@@ -174,7 +174,7 @@ export const navItem = [
       },
       {
         subtab: 'Print Tech Fee Receipt',
-        // link: `/print-tech-fee-receipt`,
+        link: `/print-tech-fee-receipt`,
       },
       {
         subtab: 'Refresh Tech Fee',
