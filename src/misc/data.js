@@ -165,12 +165,10 @@ export const navItem = [
       {
         subtab: 'Print Receipts',
         link: `https://lodlc.lautech.edu.ng/pay/#/printreceipt/`,
-        
       },
       {
         subtab: 'Payments History',
         link: `https://lodlc.lautech.edu.ng/pay/#/paymentsummary/`,
-        
       },
       {
         subtab: 'Print Tech Fee Receipt',
@@ -200,7 +198,7 @@ export const navItem = [
     title: 'Results',
     icon: <VscNotebookTemplate className='h-[20px] w-[20px]' />,
     inactive: false,
-    // link: '/check-result',
+    link: '/check-result',
   },
   {
     id: 6,
