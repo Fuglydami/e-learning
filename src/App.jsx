@@ -1,10 +1,10 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 import Protected from './routes/routes';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useNavigate } from 'react-router-dom';
 import LoadingScreen from './screens/loading-screen';
 import {
   clearLocalStorage,
@@ -12,6 +12,7 @@ import {
 } from './shared/helper-functions/save-data';
 import { toastData } from './shared/shared';
 import useLogoutTimer from './hooks/expiringTimeout';
+
 const SaveNotes = lazy(() => import('./screens/view-save-notes.js/save-notes'));
 const ViewRegisterCourse = lazy(() =>
   import('./screens/view-register-courses/view-register-course')
@@ -55,14 +56,14 @@ const PaymentTechReceipt = lazy(() =>
   import('./screens/payment-tech-receipt/payment-tech-receipt')
 );
 
-
 function App() {
+  let navigate = useNavigate();
   const tokenDetails = getJsonItemFromLocalStorage('token-details');
   const expiringTime = tokenDetails?.expiryTime;
 
   const logoutCallback = () => {
     clearLocalStorage();
-    window.location.href = '/';
+    navigate('/');
     toast.error('Session timeout', toastData);
   };
   useLogoutTimer(expiringTime, logoutCallback);
@@ -117,7 +118,10 @@ function App() {
             <Route path='/settings' element={<Settings />} />
             <Route path='/save-notes' element={<SaveNotes />} />
             <Route path='/print-all-course' element={<PrintAllCourse />} />
-            <Route path="/print-tech-fee-receipt" element={<PaymentTechReceipt/>}/>
+            <Route
+              path='/print-tech-fee-receipt'
+              element={<PaymentTechReceipt />}
+            />
           </Route>
           <Route exact path='/' element={<LoginScreen />} />
           <Route path='*' element={<ErrorPage />} />

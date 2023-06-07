@@ -2,13 +2,28 @@ import React, { useEffect } from 'react';
 import Avatar from '../../asssets/icons/avatar-img.jpg';
 import { useGlobalContext } from '../../context/globalContext';
 import { Container, MainContainer, Title } from '../../misc/component-wrapper';
-
+import { CgSoftwareUpload } from 'react-icons/cg';
 import Biodata from './components/biodata';
 import HelpCenter from './components/helpCenter';
 import Notification from './components/notification';
 import Security from './components/security';
 import ShowCGPA from './components/showCGPA';
 import { getJsonItemFromLocalStorage } from '../../shared/helper-functions/save-data';
+const ProfilePicture = ({ picture }) => {
+  return (
+    <div className='relative '>
+      <img
+        className='md:h-[96px] rounded-full  md:w-[96px] h-[70px] w-[70px]'
+        src={picture}
+        alt='avatar'
+        loading='lazy'
+      />
+      <div className='bg-base_range p-1 rounded-lg cursor-pointer absolute bottom-0 right-0'>
+        <CgSoftwareUpload className='text-[#fff] text-[20px]' />
+      </div>
+    </div>
+  );
+};
 
 const Settings = () => {
   const userDetails = getJsonItemFromLocalStorage('user-details');
@@ -25,23 +40,13 @@ const Settings = () => {
       <Container>
         <Title title={'Settings'} />
         <section className='grid lg:grid-cols-4 grid-cols-1 lg:gap-4 gap-0 w-full md:pt-12 pt-4  my-2'>
-          <article className='bg-[#FBFBFB] h-[272px] rounded-lg  '>
-            <div className='mx-auto w-4/5 mt-7'>
+          <article className='flex justify-center items-center bg-[#FBFBFB] h-[20rem] rounded-lg  '>
+            <div className=' w-4/5 '>
               <div className='flex items-center justify-center '>
                 {profilePicture ? (
-                  <img
-                    className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
-                    src={profilePicture}
-                    alt='avatar'
-                    loading='lazy'
-                  />
+                  <ProfilePicture picture={profilePicture} />
                 ) : (
-                  <img
-                    className='md:h-[96px] md:w-[96px] h-[70px] w-[70px]'
-                    src={Avatar}
-                    alt='avatar'
-                    loading='lazy'
-                  />
+                  <ProfilePicture picture={Avatar} />
                 )}
               </div>
               <p className='text-[24px] font-[600] my-3 text-center'>

@@ -60,69 +60,68 @@ const CheckResult = () => {
   useEffect(() => {
     getResultSession();
   }, []);
-  console.log(session, 'session');
+
   return (
     <MainContainer>
       <Container>
         <div
-          class={`${
+          className={`${
             isLoading && 'animate-pulse'
-          } w-full max-w-2xl mx-auto mb-4 bg-white shadow-lg rounded-lg border border-extraLightGrey`}
+          } w-full max-w-2xl mx-auto my-4 bg-white shadow-lg rounded-lg border border-extraLightGrey`}
         >
-          <header class='px-5 py-4 border-b border-extraLightGrey'>
-            <h2 class='font-semibold text-gray-800'>Select Semester</h2>
+          <header className='px-5 py-4 border-b border-extraLightGrey'>
+            <h2 className='font-semibold text-gray-800'>Select Semester</h2>
           </header>
-          <div class='p-3 shadow-lg'>
-            <div class='overflow-x-auto'>
-              <table class='table-auto w-full'>
-                <thead class='text-md font-bold  text-[#808080] bg-extraLightGrey'>
+          <div className='p-3 shadow-lg'>
+            <div className='overflow-x-auto'>
+              <table className='table-auto w-full'>
+                <thead className='text-md font-bold   text-[#808080] bg-extraLightGrey'>
                   <tr>
-                    <th class='p-2 whitespace-nowrap'>
-                      <div class='font-semibold text-left'>Select</div>
+                    <th className='p-2 whitespace-nowrap'>
+                      <div className='font-semibold text-left'>Select</div>
                     </th>
-                    <th class='p-2 whitespace-nowrap'>
-                      <div class='font-semibold text-left'>Session</div>
+                    <th className='p-2 whitespace-nowrap'>
+                      <div className='font-semibold text-left'>Session</div>
                     </th>
-                    <th class='p-2 whitespace-nowrap'>
-                      <div class='font-semibold text-left'>Semester</div>
+                    <th className='p-2 whitespace-nowrap'>
+                      <div className='font-semibold text-left'>Semester</div>
                     </th>
-                    <th class='p-2 whitespace-nowrap'>
-                      <div class='font-semibold text-left'>Level</div>
+                    <th className='p-2 whitespace-nowrap'>
+                      <div className='font-semibold text-left'>Level</div>
                     </th>
                   </tr>
                 </thead>
-                <tbody class='text-sm divide-y divide-[#808080]'>
+                <tbody className='text-sm divide-y divide-[#808080d2]'>
                   {session.map((item, index) => {
                     const { session, semester, termid, level } = item;
                     return (
                       <>
-                        <tr key={index}>
-                          <td class='p-2 whitespace-nowrap'>
-                            <div class='flex items-center '>
+                        <tr
+                          className={`${isLoading && 'animate-pulse'}`}
+                          key={index}
+                        >
+                          <td className='p-2 whitespace-nowrap'>
+                            <div className='flex items-center'>
                               <input
                                 id='country-option-1'
                                 type='radio'
                                 name='countries'
                                 onChange={() => handleRadioChange(termid)}
                                 checked={termid === selectedTermid}
-                                class='h-4 w-4 '
-                                // aria-labelledby='country-option-1'
-                                // aria-describedby='country-option-1'
-
-                                // checked={enabled}
+                                className='h-4 w-4  cursor-pointer'
                               />
                             </div>
                           </td>
-                          <td class='p-2 whitespace-nowrap'>
-                            <div class='text-left  text-md font-medium '>
+                          <td className='p-2 whitespace-nowrap'>
+                            <div className='text-left  text-md font-medium '>
                               {session}
                             </div>
                           </td>
-                          <td class='p-2 whitespace-nowrap'>
-                            <div class='text-md '>{semester}</div>
+                          <td className='p-2 whitespace-nowrap'>
+                            <div className='text-md '>{semester}</div>
                           </td>
-                          <td class='p-2 whitespace-nowrap'>
-                            <div class='text-md '>{level}</div>
+                          <td className='p-2 whitespace-nowrap'>
+                            <div className='text-md '>{level}</div>
                           </td>
                         </tr>
                       </>
