@@ -44,7 +44,6 @@ const CheckResult = () => {
         'application/pdf',
         'download'
       );
-      console.log(data, 'result');
 
       if (data && data.status === 200) {
         saveByteArray('Semester-result.pdf', data.data);
