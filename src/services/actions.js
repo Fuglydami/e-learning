@@ -7,24 +7,13 @@ import {
 } from '../shared/helper-functions/save-data';
 
 const handleError = (error) => {
-  // console.log(error.response.status, 'error in block');
-  // if(error.response.status === 401){
-  //   clearLocalStorage();
-
-  //   window.location.href = '/';
-  // }
-  if (error.code === 'ERR_NETWORK') {
+  if (error.code === 'ERR_NETWORK' || error.response.status === 404) {
     toast.error('An error occur, please try again', toastData);
-    // CustomToast(error.message, 'danger');
   } else if (error.response.status === 401) {
     clearLocalStorage();
     window.location.href = '/';
     toast.error('Session timeout', toastData);
   }
-  // else {
-  //   return error.response.data.message;
-  //   // toast.error(error.response.data.message, toastData);
-  // }
 };
 
 export const authorization = (token) => {
@@ -43,7 +32,7 @@ export const posthttp = async (url, payload) => {
     );
     return data;
   } catch (error) {
-    if (error.response.status) {
+    if (error.response.status === 400) {
       return error.response;
     } else {
       handleError(error);
@@ -63,7 +52,7 @@ export const gethttp = async (url, contentType, responseType) => {
 
     return data;
   } catch (error) {
-    if (error.response.status) {
+    if (error.response.status === 400) {
       return error.response;
     } else {
       handleError(error);
