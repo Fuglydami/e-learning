@@ -14,28 +14,6 @@ const Sidebar = () => {
   const { setShowSidebar, showSidebar } = useGlobalContext();
   let navigate = useNavigate();
 
-  const [navigation, setNativation] = useState('');
-  const [tab, setTab] = useState('');
-  const location = useLocation();
-
-  const [show, setShow] = useState(true);
-
-  const { pathname } = location;
-  const splitLocation = pathname.split('/');
-
-  const pathnames = ['/dashboard/course', '/dashboard'];
-
-  const getTitle = (title, subtab) => {
-    setNativation(title);
-    setTab(subtab);
-
-    // if (title === "Dashboard") {
-    //   navigate("/dashboard");
-    // } else if (title === "Course") {
-    //   navigate("/dashboard/course");
-    // }
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -46,7 +24,7 @@ const Sidebar = () => {
           showSidebar
             ? 'flex animate-in py-5 slide-in-from-left-48 '
             : 'hidden '
-        } flex-col h-screen overflow-hidden fixed z-40 py-10  bg-[#FFF1E7] shadow lg:w-[240px] w-[98%] `}
+        } flex-col h-screen overflow-auto fixed z-40 py-10  bg-[#FFF1E7] shadow lg:w-[240px] w-[98%] `}
       >
         <div className='space-y-3'>
           <div className='flex lg:mb-10 mb-6  items-center lg:justify-start justify-between space-x-3 px-6'>
@@ -76,7 +54,7 @@ const Sidebar = () => {
 
               <nav
                 // onClick={() => navigate("/")}
-                className='rounded-sm absolute bottom-16 ml-4 pl-2'
+                className={`rounded-sm absolute abs bottom-16 ml-4 pl-2`}
               >
                 <div
                   onClick={() => {

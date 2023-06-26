@@ -56,6 +56,7 @@ const ViewRegisterCourseScreen = () => {
       setLoading(false);
       getRegisteredCourses(false);
     } else {
+      toast.error(data.message, toastData);
       setLoading(false);
     }
   };

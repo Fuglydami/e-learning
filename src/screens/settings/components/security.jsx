@@ -26,6 +26,7 @@ const Security = () => {
           toast.success(data.message, toastData);
           setLoading(false);
         } else {
+          toast.error(data.data, toastData);
           setLoading(false);
         }
         setLoading(true);

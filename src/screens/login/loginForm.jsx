@@ -39,16 +39,18 @@ export const LoginForm = () => {
     if (value && password) {
       setLoading(true);
       const data = await posthttp(AUTH, payload);
+
       if (data && data.status === 200) {
         saveJsonItemToLocalStorage('token-details', data.data.token);
         saveJsonItemToLocalStorage('user-details', data.data.data);
         setLoading(false);
         navigate('/dashboard');
       } else {
+        toast.error(data.data, toastData);
         setLoading(false);
       }
     } else {
-      toast.warning('Enter Username and Password', toastData);
+      toast.warning('Enter Matric Number and Password', toastData);
     }
   };
 

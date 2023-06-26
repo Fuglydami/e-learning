@@ -61,6 +61,8 @@ const RegisterCourseScreen = () => {
       openModal();
       setLoading(false);
     } else {
+      toast.error(data, toastData);
+
       setLoading(false);
     }
   };

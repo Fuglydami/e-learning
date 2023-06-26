@@ -20,9 +20,11 @@ const handleError = (error) => {
     clearLocalStorage();
     window.location.href = '/';
     toast.error('Session timeout', toastData);
-  } else {
-    toast.error(error.response.data, toastData);
   }
+  // else {
+  //   return error.response.data.message;
+  //   // toast.error(error.response.data.message, toastData);
+  // }
 };
 
 export const authorization = (token) => {
@@ -41,7 +43,11 @@ export const posthttp = async (url, payload) => {
     );
     return data;
   } catch (error) {
-    handleError(error);
+    if (error.response.status) {
+      return error.response;
+    } else {
+      handleError(error);
+    }
   }
 };
 
@@ -54,8 +60,13 @@ export const gethttp = async (url, contentType, responseType) => {
       url,
       authorization(tokenDetails?.access_Token)
     );
+
     return data;
   } catch (error) {
-    handleError(error);
+    if (error.response.status) {
+      return error.response;
+    } else {
+      handleError(error);
+    }
   }
 };
